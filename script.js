@@ -1,3 +1,4 @@
+//quick test
 const bar = document.getElementById("bar");
 const allButtons = document.querySelectorAll(".btn");
 const screenDimmer = document.getElementById("screen-dimmer");
