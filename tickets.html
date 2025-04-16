@@ -1,41 +1,45 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>
-        <title>Scoopermania Tickets</title>
-        <link rel="icon" href="assets/icon.png" type="image/x-icon">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
-    </head>
+<head>
+    <title>Scoopermania Tickets</title>
+    <link rel="icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-    <body>
+<body>
 
-        <div id="screen-dimmer" onclick="exitInfo()"></div>
+<div id="screen-dimmer" onclick="exitInfo()"></div>
 
-        <div id="bar" onmouseenter="barHover()" onmouseleave="barOff()" class="glass">
+<div id="bar" onmouseenter="barHover()" onmouseleave="barOff()" class="glass">
 
-            <div id="container">
+    <div id="bar" onmouseenter="barHover()" onmouseleave="barOff()" class="glass">
 
-                <div id="home" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
-                    <img src="assets/home.png" alt="Home" class="image" id="homeIcn">
-                    <button id="homeBtn" class="btn"><a href="index.html">Home</a></button>
-                </div>
+        <div id="container">
 
-                <div id="iceCream" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
-                    <img src="assets/ticket.png" alt="Ice Cream" class="image" id="iceCreamIcn">
-                    <button id="iceCreamBtn" class="btn"><a href="tickets.html">Tickets</a></button>
-                </div>
+            <div id="home" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
+                <img src="assets/home.png" alt="Home" class="image" id="homeIcn">
+                <button id="homeBtn" class="btn"><a href="index.html">Home</a></button>
+            </div>
 
-                <div id="donate" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
-                    <img src="assets/heart.png" alt="Donate" class="image" id="donateIcn">
-                    <button id="donateBtn" class="btn">Donate</button>
-                </div>
+            <div id="iceCream" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
+                <img src="assets/ticket.png" alt="Ice Cream" class="image" id="iceCreamIcn">
+                <button id="iceCreamBtn" class="btn"><a href="tickets.html">Tickets</a></button>
+            </div>
 
+            <div id="donate" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
+                <img src="assets/heart.png" alt="Donate" class="image" id="donateIcn">
+                <button id="donateBtn" class="btn"><a href="donate.html">Donate</a></button>
             </div>
 
         </div>
 
-    </body>
-    <script src = script.js></script>
+    </div>
+    WIP
+</body>
+<script src=script.js></script>
 </html>

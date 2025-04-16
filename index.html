@@ -1,84 +1,85 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>
-        <title>Scoopermania</title>
-        <link rel="icon" href="assets/icon.png" type="image/x-icon">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+<head>
+    <title>Scoopermania</title>
+    <link rel="icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-    <body>
+<body>
 
-        <div id="screen-dimmer" onclick="exitInfo()"></div>
+<div id="screen-dimmer" onclick="exitInfo()"></div>
 
-        <div id="bar" onmouseenter="barHover()" onmouseleave="barOff()" class="glass">
+<div id="bar" onmouseenter="barHover()" onmouseleave="barOff()" class="glass">
 
-            <div id="container">
+    <div id="container">
 
-                <div id="home" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
-                    <img src="assets/home.png" alt="Home" class="image" id="homeIcn">
-                    <button id="homeBtn" class="btn">Home</a></button>
-                </div>
-
-                <div id="iceCream" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
-                    <img src="assets/ticket.png" alt="Ice Cream" class="image" id="iceCreamIcn">
-                    <button id="iceCreamBtn" class="btn"><a href="tickets.html">Tickets</a></button>
-                </div>
-
-                <div id="donate" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
-                    <img src="assets/heart.png" alt="Donate" class="image" id="donateIcn">
-                    <button id="donateBtn" class="btn">Donate</button>
-                </div>
-
-            </div>
-
+        <div id="home" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
+            <img src="assets/home.png" alt="Home" class="image" id="homeIcn">
+            <button id="homeBtn" class="btn"><a href="index.html">Home</a></button>
         </div>
 
-        <div id="center" class="glass">
-            <div id="countdown-container">
-                <div class="time-unit">
-                    <span class="number" id="days">00</span>
-                    <span class="label">Days</span>
-                </div>
-                <span class="colon">:</span>
-                <div class="time-unit">
-                    <span class="number" id="hours">00</span>
-                    <span class="label">Hours</span>
-                </div>
-                <span class="colon">:</span>
-                <div class="time-unit">
-                    <span class="number" id="minutes">00</span>
-                    <span class="label">Minutes</span>
-                </div>
-                <span class="colon">:</span>
-                <div class="time-unit">
-                    <span class="number" id="seconds">00</span>
-                    <span class="label">Seconds</span>
-                </div>
-            </div>
+        <div id="iceCream" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
+            <img src="assets/ticket.png" alt="Ice Cream" class="image" id="iceCreamIcn">
+            <button id="iceCreamBtn" class="btn"><a href="tickets.html">Tickets</a></button>
         </div>
 
-        <div id="scrollBtn">
-            <button class="mainBtn" id="scroll" onclick="mainBtnClick()">More Info</button>
+        <div id="donate" class="overlap" onmouseenter="itemHover(this)" onmouseleave="itemLeave(this)">
+            <img src="assets/heart.png" alt="Donate" class="image" id="donateIcn">
+            <button id="donateBtn" class="btn"><a href="donate.html">Donate</a></button>
         </div>
 
-        <div id="infoRight" class="glass">
-            <h2 id="infoTitle">More Info</h2>
-            <p id="infoP">
-                <b>What is Scoopermania?</b>
-                <br>
-                An Annual all-you-can-eat Ice Cream Fundraiser that benefits the Jimmy Fund and Dana-Farber Cancer Institute!
-                <br><br>
-                <b>When is Scoopermania?</b>
-                <br>
-                Scoopermania will be held on Saturday, May 17, 2025 from 12:00 PM to 4:00 PM at the Cyrus Dallin Art Museum.
-            </p>
-        </div>
+    </div>
 
-    </body>
-    <script src = script.js></script>
+</div>
+
+<div id="center" class="glass">
+    <div id="countdown-container">
+        <div class="time-unit">
+            <span class="number" id="days">00</span>
+            <span class="label">Days</span>
+        </div>
+        <span class="colon">:</span>
+        <div class="time-unit">
+            <span class="number" id="hours">00</span>
+            <span class="label">Hours</span>
+        </div>
+        <span class="colon">:</span>
+        <div class="time-unit">
+            <span class="number" id="minutes">00</span>
+            <span class="label">Minutes</span>
+        </div>
+        <span class="colon">:</span>
+        <div class="time-unit">
+            <span class="number" id="seconds">00</span>
+            <span class="label">Seconds</span>
+        </div>
+    </div>
+</div>
+
+<div id="scrollBtn">
+    <button class="mainBtn" id="scroll" onclick="mainBtnClick()">More Info</button>
+</div>
+
+<div id="infoRight" class="glass">
+    <h2 id="infoTitle">More Info</h2>
+    <p id="infoP">
+        <b>What is Scoopermania?</b>
+        <br>
+        An Annual all-you-can-eat Ice Cream Fundraiser that benefits the Jimmy Fund and Dana-Farber Cancer Institute!
+        <br><br>
+        <b>When is Scoopermania?</b>
+        <br>
+        Scoopermania will be held on Saturday, May 17, 2025 from 12:00 PM to 4:00 PM at the Cyrus Dallin Art Museum.
+    </p>
+</div>
+
+</body>
+<script src=script.js></script>
 </html>
 
