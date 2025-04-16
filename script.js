@@ -229,3 +229,13 @@ intervalId = setInterval(updateCountdown, 1000);
 setTimeout(() => {
     if (bar) bar.offsetHeight; // Force reflow
 }, 10)
+
+document.addEventListener("click", (event) => {
+    const menuBar = document.querySelector("#bar");
+    const isClickInsideMenuBar = menuBar.contains(event.target);
+
+    if (!isClickInsideMenuBar && dimmerOn) {
+        // Reset menu bar and deactivate dimmer
+        barOff(); // Call your existing function to reset styles
+    }
+});
