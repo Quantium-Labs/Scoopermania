@@ -1,14 +1,9 @@
-//quick test
 const bar = document.getElementById("bar");
 const allButtons = document.querySelectorAll(".btn");
 const screenDimmer = document.getElementById("screen-dimmer");
 const center = document.getElementById("center");
 const mainBtn = document.getElementById("scroll");
 const infoRight = document.getElementById("infoRight");
-// No need for these NodeLists globally if only used locally
-// const number = document.getElementsByClassName("number");
-// const colon = document.getElementsByClassName("colon");
-// const label = document.getElementsByClassName("label");
 
 let dimmerOn = false; // Tracks if the PERSISTENT dimmer (from mainBtnClick) is active
 
