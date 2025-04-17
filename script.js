@@ -239,3 +239,18 @@ document.addEventListener("click", (event) => {
         barOff(); // Call your existing function to reset styles
     }
 });
+
+document.addEventListener("click", (event) => {
+    const infoRightElement = document.querySelector("#infoRight");
+    const isClickInsideInfoRight = infoRightElement.contains(event.target);
+
+    if (!isClickInsideInfoRight && dimmerOn) {
+        exitInfo(); // Call the function to close the popup
+    }
+});
+
+document.querySelector(".mainBtn").addEventListener("click", (event) => {
+    event.stopPropagation(); // Prevent the click from propagating to the document
+    // Your existing logic to show the infoRight popup
+    document.querySelector("#infoRight").style.display = "block";
+});
