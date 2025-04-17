@@ -208,6 +208,8 @@ function exitInfo() {
         screenDimmer.style.webkitBackdropFilter = "blur(0)";
         screenDimmer.style.pointerEvents = "none"; // FIX: Make it unclickable
 
+        document.body.style.cursor = "default";
+
         setTimeout(() => {
             mainBtn.style.opacity = 1;
             mainBtn.style.pointerEvents = "auto";

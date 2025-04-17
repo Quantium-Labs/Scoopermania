@@ -328,12 +328,37 @@ html, body {
     font-weight: 900;
 }
 
-#infoP {
-    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
-    padding: 0 8em;
-}
-
 a {
     text-decoration: none;
     color: white;
+}
+#map{
+    text-decoration: underline;
+}
+.larger{
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+    font-size: 1.5vw;
+    text-align: left;
+    max-width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.info{
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+    text-align: left;
+    max-width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#exit{
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    font-family: "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;
+    font-weight: 800;
+    font-size: 1.2em;
 }
