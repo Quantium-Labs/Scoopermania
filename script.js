@@ -1,3 +1,18 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the current path to determine if we're in a subdirectory
+    const path = window.location.pathname;
+    const navbarPath = path.includes('/about/') || path.includes('/tickets/') ? '../navbar.html' : 'navbar.html';
+
+    fetch(navbarPath)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading navbar:', error);
+        });
+});
+
 const bar = document.getElementById("bar");
 const allButtons = document.querySelectorAll(".btn");
 const screenDimmer = document.getElementById("screen-dimmer");
