@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 });
 
-const bar = document.getElementById("bar");
-const allButtons = document.querySelectorAll(".btn");
 const screenDimmer = document.getElementById("screen-dimmer");
 const center = document.getElementById("center");
 const mainBtn = document.getElementById("scroll");
@@ -68,6 +66,8 @@ function updateCountdown() {
 // --- Interaction Functions ---
 function barHover() {
     // Apply bar hover styles
+    const bar = document.getElementById("bar");
+    const allButtons = document.querySelectorAll(".btn");
     bar.style.width = "30%";
     bar.style.height = "8%";
     bar.style.borderRadius = "2em";
@@ -91,6 +91,8 @@ function barHover() {
 
 function barOff() {
     // Apply bar non-hover styles
+    const bar = document.getElementById("bar");
+    const allButtons = document.querySelectorAll(".btn");
     bar.style.width = "25%";
     bar.style.height = "7%";
     bar.style.borderRadius = "1.45em";
