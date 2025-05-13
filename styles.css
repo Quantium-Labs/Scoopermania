@@ -34,7 +34,7 @@
         font-size: 7vw !important;
     }
 
-    .larger{
+    .larger {
         font-size: 5vw !important;
     }
 
@@ -44,12 +44,13 @@
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
     }
+
     #info {
         padding: 0 1em !important;
     }
 
-    #patronTitle{
-            font-size: 7vw !important;
+    #patronTitle {
+        font-size: 7vw !important;
     }
 
     #patronCenter {
@@ -57,7 +58,7 @@
         max-height: 25%;
     }
 
-    .list{
+    .list {
         font-size: 3.5vw !important;
     }
 
@@ -354,10 +355,12 @@ a {
     text-decoration: none;
     color: white;
 }
-#map{
+
+#map {
     text-decoration: underline;
 }
-.larger{
+
+.larger {
     filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
     font-size: 1.5vw;
     text-align: left;
@@ -366,7 +369,8 @@ a {
     left: 50%;
     transform: translateX(-50%);
 }
-.info{
+
+.info {
     filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
     text-align: left;
     max-width: 80%;
@@ -374,18 +378,19 @@ a {
     left: 50%;
     transform: translateX(-50%);
 }
-#exit{
+
+#exit {
     position: absolute;
     right: 1vw;
     top: 1vw;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     cursor: pointer;
     font-family: "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;
     font-weight: 800;
     font-size: 1.2em;
 }
 
-#patronTitle{
+#patronTitle {
     margin-top: -0.5vw;
     font-size: 5vw;
     font-family: 'SF Mono', 'Azeret Mono', 'JetBrains Mono', 'Space Mono', 'Fira Mono', 'Roboto Mono', 'IBM Plex Mono', SFMono-Regular, ui-monospace, monospace;
@@ -419,14 +424,14 @@ a {
     cursor: auto;
 }
 
-#patronLists{
+#patronLists {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     margin-top: -2vw;
 }
 
-.list{
+.list {
     filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
     font-size: 1.5vw;
     cursor: default;
