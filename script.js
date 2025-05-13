@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get the current path to determine if we're in a subdirectory
     const path = window.location.pathname;
-    const navbarPath = path.includes('/about/') || path.includes('/tickets/') ? '../navbar.html' : 'navbar.html';
+    const navbarPath = path.includes('/supporters/') || path.includes('/tickets/') ? '../navbar.html' : 'navbar.html';
 
     fetch(navbarPath)
         .then(response => response.text())
