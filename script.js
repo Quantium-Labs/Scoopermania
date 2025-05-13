@@ -268,3 +268,24 @@ document.querySelector(".mainBtn").addEventListener("click", (event) => {
     // Your existing logic to show the infoRight popup
     document.querySelector("#infoRight").style.display = "block";
 });
+
+function buy() {
+    const ticketType = document.getElementById('ticketType').value;
+    let url = '';
+
+    switch (ticketType) {
+        case 'Premium':
+            url = 'https://youtube.com';
+            break;
+        case 'Adult':
+            url = 'https://google.com';
+            break;
+        case 'Child':
+            url = 'https://docs.google.com';
+            break;
+        default:
+            return; // Do nothing if no valid option
+    }
+
+    window.open(url, '_blank');
+}

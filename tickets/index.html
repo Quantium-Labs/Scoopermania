@@ -16,25 +16,30 @@
 <div id="screen-dimmer" onclick="exitInfo()"></div>
 <div id="navbar-placeholder"></div>
 
-<label for="ticketType">Buy a Ticket!</label>
-<select name="ticketType" id="ticketType">
-    <option value="Premium">Premium</option>
-    <option value="Adult">Adult</option>
-    <option value="Child">Child</option>
-</select>
+<div id="centerTickets" class="glass">
+    <div>
+        <label for="ticketType" id="buyLabel">Buy a Ticket!</label>
+        <select name="ticketType" id="ticketType">
+            <option value="Premium">Premium</option>
+            <option value="Adult">Adult</option>
+            <option value="Child">Child</option>
+        </select>
+        <button id="buyBtn" onclick="buy()">Buy!</button>
+    </div>
+</div>
 
-<h1>What's the difference?</h1>
+<h2>What's the difference?</h2>
 <div>
     <div>
-        <h1></h1>
+        <h1>Premium</h1>
         <p></p>
     </div>
     <div>
-        <h1></h1>
+        <h1>Adult</h1>
         <p></p>
     </div>
     <div>
-        <h1></h1>
+        <h1>Child</h1>
         <p></p>
     </div>
 </div>
