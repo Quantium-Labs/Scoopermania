@@ -1,7 +1,7 @@
 @media screen and (max-width: 768px) {
     #center {
         min-width: 90%;
-        max-height: 30%;
+        max-height: 25%;
     }
 
 
@@ -27,6 +27,7 @@
 
     #infoRight {
         width: 95% !important;
+        height: 55% !important;
     }
 
     #infoTitle {
