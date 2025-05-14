@@ -20,7 +20,7 @@ const infoRight = document.getElementById("infoRight");
 
 let dimmerOn = false; // Tracks if the PERSISTENT dimmer (from mainBtnClick) is active
 
-const date = new Date("May 17, 2025, 12:00:00").getTime();
+const date = new Date("May 17, 2025, 11:00:00").getTime();
 let intervalId = null;
 
 // --- Function to update the countdown display ---
