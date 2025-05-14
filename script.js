@@ -17,6 +17,7 @@ const screenDimmer = document.getElementById("screen-dimmer");
 const center = document.getElementById("center");
 const mainBtn = document.getElementById("scroll");
 const infoRight = document.getElementById("infoRight");
+const bar = document.getElementById("bar");
 
 let dimmerOn = false; // Tracks if the PERSISTENT dimmer (from mainBtnClick) is active
 
@@ -25,6 +26,8 @@ let intervalId = null;
 
 // --- Function to update the countdown display ---
 function updateCountdown() {
+    // Only run if countdown elements exist
+    if (!document.getElementById("days")) return;
     let current = new Date().getTime();
     const distance = date - current;
 
@@ -60,13 +63,12 @@ function updateCountdown() {
     if (countdownMinutes) countdownMinutes.innerHTML = ("0" + minutes).slice(-2);
     if (countdownSeconds) countdownSeconds.innerHTML = ("0" + seconds).slice(-2);
 }
-
 // --- End of updateCountdown function ---
 
 // --- Interaction Functions ---
 function barHover() {
+    if (!bar) return;
     // Apply bar hover styles
-    const bar = document.getElementById("bar");
     const allButtons = document.querySelectorAll(".btn");
     bar.style.width = "30%";
     bar.style.height = "8%";
@@ -81,7 +83,7 @@ function barHover() {
     });
 
     // Apply TEMPORARY dimmer visual effect ONLY if the main dimmer isn't active
-    if (!dimmerOn) {
+    if (!dimmerOn && screenDimmer) {
         screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
         screenDimmer.style.backdropFilter = "blur(0.2vw)";
         screenDimmer.style.webkitBackdropFilter = "blur(0.2vw)";
@@ -90,8 +92,8 @@ function barHover() {
 }
 
 function barOff() {
+    if (!bar) return;
     // Apply bar non-hover styles
-    const bar = document.getElementById("bar");
     const allButtons = document.querySelectorAll(".btn");
     bar.style.width = "25%";
     bar.style.height = "7%";
@@ -106,7 +108,7 @@ function barOff() {
     });
 
     // Remove TEMPORARY dimmer visual effect ONLY if the main dimmer isn't active
-    if (!dimmerOn) {
+    if (!dimmerOn && screenDimmer) {
         screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0)";
         screenDimmer.style.backdropFilter = "blur(0)";
         screenDimmer.style.webkitBackdropFilter = "blur(0)";
@@ -141,14 +143,22 @@ function itemLeave(element) {
 }
 
 function mainBtnClick() {
+    // Only run if infoRight exists
+    if (!infoRight) return;
+    // Hide centerTickets if it exists (for tickets page)
+    const centerTickets = document.getElementById("centerTickets");
+    if (centerTickets) {
+        centerTickets.style.display = "none";
+    }
     // --- Animate elements ---
-    center.style.transition = "0.7s ease-in-out";
-    center.style.scale = 0.5;
-    center.style.left = "1vw";
-    center.style.bottom = "1vw";
-    center.style.backgroundColor = "rgba(130, 130, 130, 0.5)";
-    center.style.borderColor = "rgb(170, 170, 170)";
-
+    if (center) {
+        center.style.transition = "0.7s ease-in-out";
+        center.style.scale = 0.5;
+        center.style.left = "1vw";
+        center.style.bottom = "1vw";
+        center.style.backgroundColor = "rgba(130, 130, 130, 0.5)";
+        center.style.borderColor = "rgb(170, 170, 170)";
+    }
     const labels = document.querySelectorAll(".label");
     labels.forEach((label) => {
         label.style.transition = "0.7s ease-in-out";
@@ -164,38 +174,42 @@ function mainBtnClick() {
         colon.style.transition = "0.7s ease-in-out";
         colon.style.color = "#E5E5E5";
     });
-
-    mainBtn.style.opacity = 0;
-    mainBtn.style.pointerEvents = "none";
-
+    if (mainBtn) {
+        mainBtn.style.opacity = 0;
+        mainBtn.style.pointerEvents = "none";
+    }
     infoRight.style.transition = "0.7s ease-in-out";
     infoRight.style.left = "50%";
     infoRight.style.zIndex = 10;
-
-    bar.style.transition = "0.5s ease-in-out";
-    bar.style.top = "-10%";
-    bar.style.pointerEvents = "none";
-
+    if (bar) {
+        bar.style.transition = "0.5s ease-in-out";
+        bar.style.top = "-10%";
+        bar.style.pointerEvents = "none";
+    }
     // --- Activate PERSISTENT dimmer ---
-    screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-    // Optional: Add blur consistent with barHover if desired
-    // screenDimmer.style.backdropFilter = "blur(0.2vw)";
-    // screenDimmer.style.webkitBackdropFilter = "blur(0.2vw)";
-    screenDimmer.style.pointerEvents = "auto"; // Make it clickable
+    if (screenDimmer) {
+        screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+        screenDimmer.style.pointerEvents = "auto"; // Make it clickable
+    }
     dimmerOn = true; // Set the persistent state
 }
 
 function exitInfo() {
     // Only run if the persistent dimmer is active
+    const centerTickets = document.getElementById("centerTickets");
+    if (centerTickets) {
+        centerTickets.style.display = "flex";
+    }
     if (dimmerOn) {
         // --- Animate elements back ---
-        center.style.transition = "0.7s ease-in-out";
-        center.style.scale = 1;
-        center.style.left = "50%";
-        center.style.bottom = "50%";
-        center.style.backgroundColor = "rgba(229, 229, 229, 0.3)";
-        center.style.borderColor = "#E5E5E5"; // FIX: Typo corrected
-
+        if (center) {
+            center.style.transition = "0.7s ease-in-out";
+            center.style.scale = 1;
+            center.style.left = "50%";
+            center.style.bottom = "50%";
+            center.style.backgroundColor = "rgba(229, 229, 229, 0.3)";
+            center.style.borderColor = "#E5E5E5"; // FIX: Typo corrected
+        }
         const labels = document.querySelectorAll(".label");
         labels.forEach((label) => {
             // No need for transition here if you want instant change back
@@ -209,70 +223,76 @@ function exitInfo() {
         colons.forEach((colon) => {
             colon.style.color = "white";
         });
-
-
-        infoRight.style.transition = "0.7s ease-in-out";
-        infoRight.style.left = "200%";
-        infoRight.style.zIndex = 0; // Or appropriate default
-
-        bar.style.transition = "0.5s ease-in-out";
-        bar.style.top = "8%";
-        bar.style.pointerEvents = "auto";
-
+        if (infoRight) {
+            infoRight.style.transition = "0.7s ease-in-out";
+            infoRight.style.left = "200%";
+            infoRight.style.zIndex = 0; // Or appropriate default
+        }
+        if (bar) {
+            bar.style.transition = "0.5s ease-in-out";
+            bar.style.top = "8%";
+            bar.style.pointerEvents = "auto";
+        }
         // --- Deactivate PERSISTENT dimmer ---
-        screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0)";
-        screenDimmer.style.backdropFilter = "blur(0)";
-        screenDimmer.style.webkitBackdropFilter = "blur(0)";
-        screenDimmer.style.pointerEvents = "none"; // FIX: Make it unclickable
-
+        if (screenDimmer) {
+            screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0)";
+            screenDimmer.style.backdropFilter = "blur(0)";
+            screenDimmer.style.webkitBackdropFilter = "blur(0)";
+            screenDimmer.style.pointerEvents = "none"; // FIX: Make it unclickable
+        }
         document.body.style.cursor = "default";
-
-        setTimeout(() => {
-            mainBtn.style.opacity = 1;
-            mainBtn.style.pointerEvents = "auto";
-        }, 500); // 0.5 second delay
+        if (mainBtn) {
+            setTimeout(() => {
+                mainBtn.style.opacity = 1;
+                mainBtn.style.pointerEvents = "auto";
+            }, 500); // 0.5 second delay
+        }
         dimmerOn = false;
     }
 }
-
 // --- End of Interaction Functions ---
 
 // --- Initial Setup ---
-updateCountdown();
-intervalId = setInterval(updateCountdown, 1000);
-setTimeout(() => {
-    if (bar) bar.offsetHeight; // Force reflow
-}, 10)
+if (document.getElementById("days")) {
+    updateCountdown();
+    intervalId = setInterval(updateCountdown, 1000);
+    setTimeout(() => {
+        if (bar) bar.offsetHeight; // Force reflow
+    }, 10)
+}
 
-document.addEventListener("click", (event) => {
-    const menuBar = document.querySelector("#bar");
-    const isClickInsideMenuBar = menuBar.contains(event.target);
-
-    if (!isClickInsideMenuBar && dimmerOn) {
-        // Reset menu bar and deactivate dimmer
-        barOff(); // Call your existing function to reset styles
-    }
-});
-
-document.addEventListener("click", (event) => {
-    const infoRightElement = document.querySelector("#infoRight");
-    const isClickInsideInfoRight = infoRightElement.contains(event.target);
-
-    if (!isClickInsideInfoRight && dimmerOn) {
-        exitInfo(); // Call the function to close the popup
-    }
-});
-
-document.querySelector(".mainBtn").addEventListener("click", (event) => {
-    event.stopPropagation(); // Prevent the click from propagating to the document
-    // Your existing logic to show the infoRight popup
-    document.querySelector("#infoRight").style.display = "block";
-});
+// Only add document click listeners if bar or infoRight exist
+if (bar) {
+    document.addEventListener("click", (event) => {
+        const menuBar = document.querySelector("#bar");
+        if (!menuBar) return;
+        const isClickInsideMenuBar = menuBar.contains(event.target);
+        if (!isClickInsideMenuBar && dimmerOn) {
+            barOff(); // Call your existing function to reset styles
+        }
+    });
+}
+if (infoRight) {
+    document.addEventListener("click", (event) => {
+        const infoRightElement = document.querySelector("#infoRight");
+        if (!infoRightElement) return;
+        const isClickInsideInfoRight = infoRightElement.contains(event.target);
+        if (!isClickInsideInfoRight && dimmerOn) {
+            exitInfo(); // Call the function to close the popup
+        }
+    });
+}
+if (mainBtn && infoRight) {
+    mainBtn.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent the click from propagating to the document
+        // Your existing logic to show the infoRight popup
+        infoRight.style.display = "block";
+    });
+}
 
 function buy() {
-    const ticketType = document.getElementById('ticketType').value;
+    const ticketType = document.getElementById('ticketType')?.value;
     let url = '';
-
     switch (ticketType) {
         case 'Premium':
             url = 'https://youtube.com';
@@ -286,6 +306,6 @@ function buy() {
         default:
             return; // Do nothing if no valid option
     }
-
     window.open(url, '_blank');
 }
+

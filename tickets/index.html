@@ -17,33 +17,44 @@
 <div id="navbar-placeholder"></div>
 
 <div id="centerTickets" class="glass">
-    <div>
-        <label for="ticketType" id="buyLabel">Buy a Ticket!</label>
-        <select name="ticketType" id="ticketType">
-            <option value="Premium">Premium</option>
-            <option value="Adult">Adult</option>
-            <option value="Child">Child</option>
-        </select>
-        <button id="buyBtn" onclick="buy()">Buy!</button>
+    <div id="centerForm">
+        <div id="form">
+            <label for="ticketType" id="buyLabel">Buy a Ticket!</label>
+            <div id="enter">
+                <select name="ticketType" id="ticketType">
+                    <option value="Premium">Premium</option>
+                    <option value="Adult">Adult</option>
+                    <option value="Child">Child</option>
+                </select>
+                <button id="buyBtn" onclick="buy()">Buy!</button>
+            </div>
+        </div>
     </div>
 </div>
 
-<h2>What's the difference?</h2>
-<div>
+<div id="scrollBtn">
+    <button class="mainBtn no-glow" id="scroll" onclick="mainBtnClick()">What's the difference?</button>
+</div>
+
+<div id="infoRight" class="glass">
+    <h2>What's the difference?</h2>
     <div>
-        <h1>Premium</h1>
-        <p></p>
-    </div>
-    <div>
-        <h1>Adult</h1>
-        <p></p>
-    </div>
-    <div>
-        <h1>Child</h1>
-        <p></p>
+        <div>
+            <h1>Premium</h1>
+            <p></p>
+        </div>
+        <div>
+            <h1>Adult</h1>
+            <p></p>
+        </div>
+        <div>
+            <h1>Child</h1>
+            <p></p>
+        </div>
     </div>
 </div>
 </body>
 <script src="../script.js"></script>
 
 </html>
+
