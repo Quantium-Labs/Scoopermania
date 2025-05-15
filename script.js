@@ -307,13 +307,13 @@ function buy() {
 
     switch (ticketType) {
         case 'Premium':
-            url = 'https://youtube.com';
+            url = 'https://ko-fi.com/s/9419ab8349';
             break;
         case 'Adult':
-            url = 'https://google.com';
+            url = 'https://ko-fi.com/s/152b08e74c';
             break;
         case 'Child':
-            url = 'https://docs.google.com';
+            url = 'https://ko-fi.com/s/08b43c691b';
             break;
         default:
             return; // Do nothing if no valid option
