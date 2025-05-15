@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
 const screenDimmer = document.getElementById("screen-dimmer");
 const center = document.getElementById("center");
 const mainBtn = document.getElementById("scroll");
-const infoRight = document.getElementById("infoRight");
 
 let dimmerOn = false; // Tracks if the PERSISTENT dimmer (from mainBtnClick) is active
 
@@ -145,8 +144,14 @@ function getCenterElement() {
     return document.getElementById("center") || document.getElementById("centerTickets");
 }
 
+function getInfoRightElement() {
+    // Returns the first element with class 'infoRight'
+    return document.getElementsByClassName("infoRight")[0];
+}
+
 function mainBtnClick() {
     const centerElem = getCenterElement();
+    const infoRight = getInfoRightElement();
     if (!centerElem || !screenDimmer || !infoRight) return;
     const centerTickets = document.getElementById("centerTickets");
     if (centerTickets) {
@@ -184,6 +189,7 @@ function mainBtnClick() {
     infoRight.style.transition = "0.7s ease-in-out";
     infoRight.style.left = "50%";
     infoRight.style.zIndex = 10;
+    infoRight.style.display = "block";
 
     if (typeof bar !== 'undefined' && bar) {
         bar.style.transition = "0.5s ease-in-out";
@@ -200,6 +206,7 @@ function mainBtnClick() {
 function exitInfo() {
     if (!dimmerOn) return;
     const centerElem = getCenterElement();
+    const infoRight = getInfoRightElement();
     if (!centerElem || !screenDimmer || !infoRight) return;
     const centerTickets = document.getElementById("centerTickets");
     if (centerTickets) {
@@ -229,6 +236,7 @@ function exitInfo() {
     infoRight.style.transition = "0.7s ease-in-out";
     infoRight.style.left = "200%";
     infoRight.style.zIndex = 0;
+    infoRight.style.display = "none";
 
     if (typeof bar !== 'undefined' && bar) {
         bar.style.transition = "0.5s ease-in-out";
@@ -271,8 +279,8 @@ document.addEventListener("click", (event) => {
     }
 });
 
-// Only add event listener if #infoRight exists
-const infoRightElement = document.querySelector("#infoRight");
+// Only add event listener if .infoRight exists
+const infoRightElement = document.querySelector(".infoRight");
 if (infoRightElement) {
     document.addEventListener("click", (event) => {
         const isClickInsideInfoRight = infoRightElement.contains(event.target);
@@ -283,7 +291,7 @@ if (infoRightElement) {
     });
 }
 
-// Only add event listener if .mainBtn and #infoRight exist
+// Only add event listener if .mainBtn and .infoRight exist
 const mainBtnElement = document.querySelector(".mainBtn");
 if (mainBtnElement && infoRightElement) {
     mainBtnElement.addEventListener("click", (event) => {
