@@ -533,9 +533,22 @@ a {
 #ticketType{
     margin-right: 1vw;
     font-size: 1.2vw;
-    border: 1vw;
+    background: white url('./assets/arrow.png') no-repeat right 1em center/1em auto;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    padding: 0.5em 2.5em 0.5em 1em; /* Right padding gives space for the arrow */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: none;
+    cursor: pointer;
 }
 
 #ticketInfoRight{
     height: 60%;
+}
+
+.arrow{
+    height: 1em;
 }
