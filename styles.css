@@ -8,6 +8,15 @@
         font-size: 2em !important;
     }
 
+    #buyBtn{
+        padding: 2vw 1em !important;
+    }
+
+    #ticketType{
+        font-size: 1em !important;
+    }
+
+
     #ticketInfoRight{
         height: 80% !important;
     }
@@ -483,11 +492,15 @@ a {
 }
 
 #buyLabel{
-    display: block;
+
     font-size: 3em;
     color: white;
     font-weight: 900;
     margin-top: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #buyBtn{
@@ -509,6 +522,7 @@ a {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     height: 100%;
+    text-align: center;
 }
 
 #centerForm{
