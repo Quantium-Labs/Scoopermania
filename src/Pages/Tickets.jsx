@@ -1,0 +1,72 @@
+import {useState} from 'react'
+import Navbar from '../Navbar.jsx'
+import '../App.css'
+
+export default function Tickets() {
+
+    return (
+        <>
+            <head>
+                <title>Scoopermania Patrons</title>
+                <link rel="icon" href="../assets/icon.png" type="image/x-icon"/>
+                <link rel="stylesheet" href="../styles.css"/>
+                <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+                    rel="stylesheet"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            </head>
+
+            <body>
+
+            <div id="screen-dimmer" onClick="exitInfo()"></div>
+            <Navbar/>
+
+            <div id="centerTickets" className="glass">
+                <div id="centerForm">
+                    <div id="form">
+                        <label htmlFor="ticketType" id="buyLabel">Buy a Ticket!</label>
+                        <div id="enter">
+                            <select name="ticketType" id="ticketType">
+                                <option value="Premium">Premium</option>
+                                <option value="Adult">Adult</option>
+                                <option value="Child">Child</option>
+                            </select>
+                            <button id="buyBtn" onClick="buy()">Buy!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="scrollBtn">
+                <button className="mainBtn no-glow" id="scroll" onClick="mainBtnClick()">What's the difference?</button>
+            </div>
+
+            <div className="infoRight glass" id="ticketInfoRight">
+                <p id="exit" onClick="exitInfo()">X</p>
+                <h2 id="infoTitle">What's the difference?</h2>
+                <div>
+                    <div>
+                        <h3 className="larger">Premium</h3>
+                        <p className="info">For only $2 more dollars than the Adult ticket enjoy all-you-can-eat ice
+                            cream, get into the raffle, support the cause, and cement your name into the Patrons page of
+                            the Scoopermania website!</p>
+                    </div>
+                    <div>
+                        <h3 className="larger">Adult</h3>
+                        <p className="info">For those 13 and older, get all-you-can-eat ice cream for only $8 dollars at
+                            Scoopermania on May 17!</p>
+                    </div>
+                    <div>
+                        <h3 className="larger">Child</h3>
+                        <p className="info">For those 12 and younger, get all-you-can-eat ice cream for only $5 dollars
+                            at Scoopermania on May 17!</p>
+                    </div>
+                </div>
+            </div>
+            </body>
+            <script src="../script.js"></script>
+        </>
+    )
+}

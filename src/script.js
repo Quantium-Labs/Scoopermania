@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get the current path to determine if we're in a subdirectory
     const path = window.location.pathname;
-    const navbarPath = path.includes('/supporters/') || path.includes('/tickets/') ? '../navbar.html' : 'navbar.html';
+    const navbarPath = path.includes('/supporters/') || path.includes('/tickets/') ? '../navbar.jsx' : 'navbar.jsx';
 
     fetch(navbarPath)
         .then(response => response.text())
@@ -64,7 +64,7 @@ function updateCountdown() {
 // --- End of updateCountdown function ---
 
 // --- Interaction Functions ---
-function barHover() {
+export function barHover() {
     // Apply bar hover styles
     const bar = document.getElementById("bar");
     const allButtons = document.querySelectorAll(".btn");
@@ -89,7 +89,7 @@ function barHover() {
     }
 }
 
-function barOff() {
+export function barOff() {
     // Apply bar non-hover styles
     const bar = document.getElementById("bar");
     const allButtons = document.querySelectorAll(".btn");
@@ -114,7 +114,7 @@ function barOff() {
     }
 }
 
-function itemHover(element) {
+export function itemHover(element) {
     const img = element.querySelector(".image");
     const btn = element.querySelector(".btn");
     if (img) {
@@ -127,7 +127,7 @@ function itemHover(element) {
     }
 }
 
-function itemLeave(element) {
+export function itemLeave(element) {
     const img = element.querySelector(".image");
     const btn = element.querySelector(".btn");
     if (img) {

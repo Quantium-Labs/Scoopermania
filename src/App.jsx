@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Navbar from './Navbar.jsx'
 import './App.css'
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
 
       <div id="screen-dimmer" onClick="exitInfo()"></div>
 
-      <div id="navbar-placeholder"></div>
+      <Navbar/>
 
       <div id="center" className="glass">
         <div id="countdown-container">
