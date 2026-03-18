@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get the current path to determine if we're in a subdirectory
     const path = window.location.pathname;
@@ -321,4 +322,3 @@ function buy() {
 
     window.open(url, '_blank');
 }
-
