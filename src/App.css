@@ -107,7 +107,7 @@
 
 html, body {
   position: absolute;
-  background-image: url("assets/background.png");
+  background-image: url("public/background.png");
   top: 0;
   left: 0;
   margin: 0;
@@ -548,7 +548,7 @@ a {
 #ticketType{
   margin-right: 1vw;
   font-size: 1.2vw;
-  background: white url('./assets/arrow.png') no-repeat right 1em center/1em auto;
+  background: white url('./public/arrow.png') no-repeat right 1em center/1em auto;
   color: black;
   border: 1px solid #ccc;
   border-radius: 1em;
