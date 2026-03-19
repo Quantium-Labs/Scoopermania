@@ -12,18 +12,18 @@ export default function Supporters() {
 
             <body>
 
-            <div id="screen-dimmer" onclick="exitInfo()"></div>
+            <div id="screen-dimmer" onClick="exitInfo()"></div>
 
             <Navbar/>
 
-            <div id="patronCenter" class="glass">
+            <div id="patronCenter" className="glass">
                 <h1 id="patronTitle">Patrons</h1>
                 <div id="patronLists">
-                    <p class="list">Matt Malupin<br/>Caleb Lefebvre<br/>Camden Clark<br/>Patricia Fries<br/>Linda
+                    <p className="list">Matt Malupin<br/>Caleb Lefebvre<br/>Camden Clark<br/>Patricia Fries<br/>Linda
                         Manganaro
                     </p>
-                    <p class="list">Ms. Q<br/>Hailey Stern<br/>Amitai Zur<br/>Jannine Williams<br/>Donald Rivkin</p>
-                    <p class="list">Cairn Johnson<br/>Lincoln Clark<br/>Al Davidson<br/>Judy Miller</p>
+                    <p className="list">Ms. Q<br/>Hailey Stern<br/>Amitai Zur<br/>Jannine Williams<br/>Donald Rivkin</p>
+                    <p className="list">Cairn Johnson<br/>Lincoln Clark<br/>Al Davidson<br/>Judy Miller</p>
                 </div>
             </div>
             </body>

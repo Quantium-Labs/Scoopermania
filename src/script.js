@@ -20,11 +20,11 @@ const mainBtn = document.getElementById("scroll");
 
 let dimmerOn = false; // Tracks if the PERSISTENT dimmer (from mainBtnClick) is active
 
-const date = new Date("May 17, 2025, 11:00:00").getTime();
+const date = new Date("May 9, 2026, 11:00:00").getTime();
 let intervalId = null;
 
 // --- Function to update the countdown display ---
-function updateCountdown() {
+export function updateCountdown() {
     let current = new Date().getTime();
     const distance = date - current;
 
@@ -141,16 +141,16 @@ export function itemLeave(element) {
 }
 
 // Helper to get the correct center element
-function getCenterElement() {
+export function getCenterElement() {
     return document.getElementById("center") || document.getElementById("centerTickets");
 }
 
-function getInfoRightElement() {
+export function getInfoRightElement() {
     // Returns the first element with class 'infoRight'
     return document.getElementsByClassName("infoRight")[0];
 }
 
-function mainBtnClick() {
+export function mainBtnClick() {
     const centerElem = getCenterElement();
     const infoRight = getInfoRightElement();
     if (!centerElem || !screenDimmer || !infoRight) return;
@@ -204,7 +204,7 @@ function mainBtnClick() {
     dimmerOn = true;
 }
 
-function exitInfo() {
+export function exitInfo() {
     if (!dimmerOn) return;
     const centerElem = getCenterElement();
     const infoRight = getInfoRightElement();
@@ -302,7 +302,7 @@ if (mainBtnElement && infoRightElement) {
     });
 }
 
-function buy() {
+export function buy() {
     const ticketType = document.getElementById('ticketType').value;
     let url = '';
 
