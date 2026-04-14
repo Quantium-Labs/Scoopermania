@@ -12,7 +12,7 @@ export default function Supporters() {
 
             <body>
 
-            <div id="screen-dimmer" onClick="exitInfo()"></div>
+            <div id="screen-dimmer"></div>
 
             <Navbar/>
 
@@ -27,7 +27,6 @@ export default function Supporters() {
                 </div>
             </div>
             </body>
-            <script src='../script.js'></script>
         </>
     )
 }
