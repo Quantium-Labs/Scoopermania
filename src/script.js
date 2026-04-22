@@ -1,7 +1,8 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get the current path to determine if we're in a subdirectory
     const path = window.location.pathname;
-    const navbarPath = path.includes('/supporters/') || path.includes('/tickets/') ? '../navbar.html' : 'navbar.html';
+    const navbarPath = path.includes('/supporters/') || path.includes('/tickets/') ? '../navbar.jsx' : 'navbar.jsx';
 
     fetch(navbarPath)
         .then(response => response.text())
@@ -19,11 +20,11 @@ const mainBtn = document.getElementById("scroll");
 
 let dimmerOn = false; // Tracks if the PERSISTENT dimmer (from mainBtnClick) is active
 
-const date = new Date("May 17, 2025, 11:00:00").getTime();
+const date = new Date("May 9, 2026, 11:00:00").getTime();
 let intervalId = null;
 
 // --- Function to update the countdown display ---
-function updateCountdown() {
+export function updateCountdown() {
     let current = new Date().getTime();
     const distance = date - current;
 
@@ -63,7 +64,7 @@ function updateCountdown() {
 // --- End of updateCountdown function ---
 
 // --- Interaction Functions ---
-function barHover() {
+export function barHover() {
     // Apply bar hover styles
     const bar = document.getElementById("bar");
     const allButtons = document.querySelectorAll(".btn");
@@ -88,7 +89,7 @@ function barHover() {
     }
 }
 
-function barOff() {
+export function barOff() {
     // Apply bar non-hover styles
     const bar = document.getElementById("bar");
     const allButtons = document.querySelectorAll(".btn");
@@ -113,7 +114,7 @@ function barOff() {
     }
 }
 
-function itemHover(element) {
+export function itemHover(element) {
     const img = element.querySelector(".image");
     const btn = element.querySelector(".btn");
     if (img) {
@@ -126,7 +127,7 @@ function itemHover(element) {
     }
 }
 
-function itemLeave(element) {
+export function itemLeave(element) {
     const img = element.querySelector(".image");
     const btn = element.querySelector(".btn");
     if (img) {
@@ -140,16 +141,16 @@ function itemLeave(element) {
 }
 
 // Helper to get the correct center element
-function getCenterElement() {
+export function getCenterElement() {
     return document.getElementById("center") || document.getElementById("centerTickets");
 }
 
-function getInfoRightElement() {
+export function getInfoRightElement() {
     // Returns the first element with class 'infoRight'
     return document.getElementsByClassName("infoRight")[0];
 }
 
-function mainBtnClick() {
+export function mainBtnClick() {
     const centerElem = getCenterElement();
     const infoRight = getInfoRightElement();
     if (!centerElem || !screenDimmer || !infoRight) return;
@@ -203,7 +204,7 @@ function mainBtnClick() {
     dimmerOn = true;
 }
 
-function exitInfo() {
+export function exitInfo() {
     if (!dimmerOn) return;
     const centerElem = getCenterElement();
     const infoRight = getInfoRightElement();
@@ -301,7 +302,7 @@ if (mainBtnElement && infoRightElement) {
     });
 }
 
-function buy() {
+export function buy() {
     const ticketType = document.getElementById('ticketType').value;
     let url = '';
 
@@ -321,4 +322,3 @@ function buy() {
 
     window.open(url, '_blank');
 }
-

@@ -1,0 +1,23 @@
+{
+    "printWidth": 10000,
+    "tabWidth": 4,
+    "useTabs": false,
+
+    "semi": true,
+    "singleQuote": false,
+    "quoteProps": "as-needed",
+
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+
+    "arrowParens": "always",
+
+    "jsxSingleQuote": false,
+
+    "htmlWhitespaceSensitivity": "ignore",
+
+    "proseWrap": "preserve",
+
+    "endOfLine": "lf"
+}
