@@ -62,8 +62,7 @@ function App() {
         }
 
         // --- Animate elements ---
-        centerElem.style.transition = "0.7s ease-in-out";
-        centerElem.style.scale = 0.5;
+        centerElem.style.scale = "0.5";
         centerElem.style.left = "1vw";
         centerElem.style.bottom = "1vw";
         centerElem.style.backgroundColor = "rgba(130, 130, 130, 0.5)";
@@ -71,28 +70,25 @@ function App() {
 
         const labels = document.querySelectorAll(".label");
         labels.forEach((label) => {
-            label.style.transition = "0.7s ease-in-out";
             label.style.color = "#E5E5E5";
         });
         const numbers = document.querySelectorAll(".number");
         numbers.forEach((number) => {
-            number.style.transition = "0.7s ease-in-out";
             number.style.color = "#E5E5E5";
         });
         const colons = document.querySelectorAll(".colon");
         colons.forEach((colon) => {
-            colon.style.transition = "0.7s ease-in-out";
             colon.style.color = "#E5E5E5";
         });
 
         if (mainBtn) {
-            mainBtn.style.opacity = 0;
+            mainBtn.style.opacity = "0";
             mainBtn.style.pointerEvents = "none";
         }
 
         infoRight.style.transition = "none";
         infoRight.style.left = "200%";
-        infoRight.style.zIndex = 10;
+        infoRight.style.zIndex = "10";
         infoRight.style.display = "block";
 
         requestAnimationFrame(() => {
@@ -101,7 +97,6 @@ function App() {
         });
 
         if (bar) {
-            bar.style.transition = "0.5s ease-in-out";
             bar.style.top = "-10%";
             bar.style.pointerEvents = "none";
         }
@@ -123,55 +118,49 @@ function App() {
         if (!centerElem || !screenDimmer || !infoRight) return;
 
         // --- Animate elements back ---
-        centerElem.style.transition = "0.7s ease-in-out";
-        centerElem.style.scale = 1;
-        centerElem.style.left = "50%";
-        centerElem.style.bottom = "50%";
-        centerElem.style.backgroundColor = "rgba(229, 229, 229, 0.3)";
-        centerElem.style.borderColor = "#E5E5E5";
+        centerElem.style.scale = "";
+        centerElem.style.left = "";
+        centerElem.style.bottom = "";
+        centerElem.style.backgroundColor = "";
+        centerElem.style.borderColor = "";
 
         const labels = document.querySelectorAll(".label");
         labels.forEach((label) => {
-            label.style.color = "white";
+            label.style.color = "";
         });
         const numbers = document.querySelectorAll(".number");
         numbers.forEach((number) => {
-            number.style.color = "white";
+            number.style.color = "";
         });
         const colons = document.querySelectorAll(".colon");
         colons.forEach((colon) => {
-            colon.style.color = "white";
+            colon.style.color = "";
         });
 
-        infoRight.style.transition = "0.7s ease-in-out";
         infoRight.style.left = "200%";
-        infoRight.style.zIndex = 0;
+        infoRight.style.zIndex = "0";
 
         closeTimeoutRef.current = setTimeout(() => {
-             infoRight.style.display = "none";
-             closeTimeoutRef.current = null;
+            infoRight.style.display = "none";
+            closeTimeoutRef.current = null;
         }, 700);
-        
-        // infoRight.style.left = "200%";
-        // script.js SETS display=none immediately. I'll utilize setTimeout to actually let it slide out.
 
         if (bar) {
-            bar.style.transition = "0.5s ease-in-out";
-            bar.style.top = "8%";
-            bar.style.pointerEvents = "auto";
+            bar.style.top = "";
+            bar.style.pointerEvents = "";
         }
 
-        screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0)";
-        screenDimmer.style.backdropFilter = "blur(0)";
-        screenDimmer.style.webkitBackdropFilter = "blur(0)";
-        screenDimmer.style.pointerEvents = "none";
+        screenDimmer.style.backgroundColor = "";
+        screenDimmer.style.backdropFilter = "";
+        screenDimmer.style.webkitBackdropFilter = "";
+        screenDimmer.style.pointerEvents = "";
 
         document.body.style.cursor = "default";
 
         setTimeout(() => {
             if (mainBtn) {
-                mainBtn.style.opacity = 1;
-                mainBtn.style.pointerEvents = "auto";
+                mainBtn.style.opacity = "";
+                mainBtn.style.pointerEvents = "";
             }
         }, 500);
         setIsInfoOpen(false);
@@ -182,15 +171,15 @@ function App() {
         const handleClickOutside = (event) => {
             const infoRight = document.querySelector(".infoRight");
             // const bar = document.querySelector("#bar"); // handled in Navbar
-            
+
             if (isInfoOpen && infoRight && !infoRight.contains(event.target)) {
-                 // Check if it was mainBtn that was clicked, to avoid immediate close?
-                 // event.stopPropagation in mainBtn handled this in script.js
-                 // Here manual check:
-                 const mainBtn = document.getElementById("scroll");
-                 if (!mainBtn.contains(event.target)) {
-                     exitInfo();
-                 }
+                // Check if it was mainBtn that was clicked, to avoid immediate close?
+                // event.stopPropagation in mainBtn handled this in script.js
+                // Here manual check:
+                const mainBtn = document.getElementById("scroll");
+                if (!mainBtn.contains(event.target)) {
+                    exitInfo();
+                }
             }
         };
 
@@ -212,72 +201,66 @@ function App() {
 
     return (
         <>
-            <head>
-                <title>Scoopermania</title>
-            </head>
+            <div id="screen-dimmer" onClick={exitInfo}></div>
 
-            <body>
-                <div id="screen-dimmer" onClick={exitInfo}></div>
+            <Navbar />
 
-                <Navbar />
-
-                <div id="center" className="glass">
-                    <div id="countdown-container">
-                        <div className="time-unit">
-                            <span className="number" id="days">
-                                {timeLeft.days}
-                            </span>
-                            <span className="label">Days</span>
-                        </div>
-                        <span className="colon">:</span>
-                        <div className="time-unit">
-                            <span className="number" id="hours">
-                                {timeLeft.hours}
-                            </span>
-                            <span className="label">Hours</span>
-                        </div>
-                        <span className="colon">:</span>
-                        <div className="time-unit">
-                            <span className="number" id="minutes">
-                                {timeLeft.minutes}
-                            </span>
-                            <span className="label">Minutes</span>
-                        </div>
-                        <span className="colon">:</span>
-                        <div className="time-unit">
-                            <span className="number" id="seconds">
-                                {timeLeft.seconds}
-                            </span>
-                            <span className="label">Seconds</span>
-                        </div>
+            <div id="center" className="glass">
+                <div id="countdown-container">
+                    <div className="time-unit">
+                        <span className="number" id="days">
+                            {timeLeft.days}
+                        </span>
+                        <span className="label">Days</span>
+                    </div>
+                    <span className="colon">:</span>
+                    <div className="time-unit">
+                        <span className="number" id="hours">
+                            {timeLeft.hours}
+                        </span>
+                        <span className="label">Hours</span>
+                    </div>
+                    <span className="colon">:</span>
+                    <div className="time-unit">
+                        <span className="number" id="minutes">
+                            {timeLeft.minutes}
+                        </span>
+                        <span className="label">Minutes</span>
+                    </div>
+                    <span className="colon">:</span>
+                    <div className="time-unit">
+                        <span className="number" id="seconds">
+                            {timeLeft.seconds}
+                        </span>
+                        <span className="label">Seconds</span>
                     </div>
                 </div>
+            </div>
 
-                <div id="scrollBtn">
-                    <button className="mainBtn" id="scroll" onClick={(e) => {
-                        e.stopPropagation();
-                        mainBtnClick();
-                    }}>
-                        More Info
-                    </button>
-                </div>
+            <div id="scrollBtn">
+                <button className="mainBtn" id="scroll" onClick={(e) => {
+                    e.stopPropagation();
+                    mainBtnClick();
+                }}>
+                    More Info
+                </button>
+            </div>
 
-                <div className="infoRight glass">
-                    <p id="exit" onClick={exitInfo}>
-                        X
-                    </p>
-                    <h2 id="infoTitle">More Info</h2>
-                    <h3 className="larger">What even is Scoopermania?</h3>
-                    <p className="info">Scoopermania is an annual all-you-can-eat ice cream fundraiser for the Jimmy Fund and Dana-Farber Cancer Institute!</p>
-                    <h3 className="larger">When is it?</h3>
-                    <p className="info">
-                        Scoopermania will be held on Saturday, May 17, 2025, from 11:00 AM to 4:00 PM at the{" "}
-                        <a id="map" href="https://maps.apple.com/directions?destination=42.415726%2C+-71.15239&mode=driving">
-                            Cyrus Dallin Art Museum.
-                        </a>
-                    </p>
-                </div>
-            </body>
+            <div className="infoRight glass">
+                <p id="exit" onClick={exitInfo}>
+                    X
+                </p>
+                <h2 id="infoTitle">More Info</h2>
+                <h3 className="larger">What even is Scoopermania?</h3>
+                <p className="info">Scoopermania is an annual all-you-can-eat ice cream fundraiser for the Jimmy Fund and Dana-Farber Cancer Institute!</p>
+                <h3 className="larger">When is it?</h3>
+                <p className="info">
+                    Scoopermania will be held on Saturday, May 17, 2025, from 11:00 AM to 4:00 PM at the{" "}
+                    <a id="map" href="https://maps.apple.com/directions?destination=42.415726%2C+-71.15239&mode=driving">
+                        Cyrus Dallin Art Museum.
+                    </a>
+                </p>
+            </div>
         </>
     );
 }
