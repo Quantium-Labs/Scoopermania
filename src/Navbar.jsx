@@ -84,21 +84,21 @@ export default function Navbar() {
         <div id="bar" onMouseEnter={handleBarHover} onMouseLeave={handleBarOff} className="glass">
             <div id="container">
                 <div id="home" className="overlap" onMouseEnter={handleItemHover} onMouseLeave={handleItemLeave}>
-                    <img src="./home.png" alt="Home" className="image" id="homeIcn" />
+                    <img src="/home.png" alt="Home" className="image" id="homeIcn" />
                     <button id="homeBtn" className="btn">
                         <Link to={"/"}>Home</Link>
                     </button>
                 </div>
 
                 <div id="iceCream" className="overlap" onMouseEnter={handleItemHover} onMouseLeave={handleItemLeave}>
-                    <img src="./ticket.png" alt="Ice Cream" className="image" id="iceCreamIcn" />
+                    <img src="/ticket.png" alt="Ice Cream" className="image" id="iceCreamIcn" />
                     <button id="iceCreamBtn" className="btn">
                         <Link to="/tickets">Tickets</Link>
                     </button>
                 </div>
 
                 <div id="about" className="overlap" onMouseEnter={handleItemHover} onMouseLeave={handleItemLeave}>
-                    <img src="./heart.png" alt="supporters" className="image" id="donateIcn" />
+                    <img src="/heart.png" alt="supporters" className="image" id="donateIcn" />
                     <button id="aboutBtn" className="btn">
                         <Link to="/supporters">Patrons</Link>
                     </button>
