@@ -6,6 +6,11 @@ export default defineConfig({
   plugins: [react()],
   base: "/",
   build: {
-    minify: false
+    minify: false,
+    rollupOptions: {
+      input: {
+        main: "index.html"
+      }
+    }
   }
 })
