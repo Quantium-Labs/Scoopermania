@@ -5,7 +5,7 @@
 ## Todos
 - [x] Convert to Vite+React
 - [x] Restore functionality
-- [ ] Rewrite logic
+- [x] Rewrite logic
 - [ ] New design
 - [ ] Proper Mobile Support
 ## What is Scoopermania?
@@ -14,11 +14,19 @@ Scoopermania is an annual all-you-can-eat ice cream fundraiser for the Jimmy Fun
 1. Download the latest release from the releases tab.
 2. Unzip the file and navigate to the folder.
 3. Open terminal and go into the project directory.
-```cd /YOUR/PATH/TO/SCOOPERMANIA ```
+```
+cd /YOUR/PATH/TO/SCOOPERMANIA 
+```
 3. Install the dependencies.
-``` npm install ```
+``` 
+npm install 
+```
 4. Build the project.
-``` npm run build ```
+``` 
+npm run build 
+```
 5. Start the server.
-```npm run preview ```
+```
+npm run preview 
+```
 6. Click on the link provided in the terminal to view the website.
