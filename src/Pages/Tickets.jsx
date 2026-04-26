@@ -24,6 +24,9 @@ export default function Tickets() {
             case 'Child':
                 url = 'https://ko-fi.com/s/08b43c691b';
                 break;
+            case 'Donate':
+                url = 'https://ko-fi.com/scoopermania'
+                break;
             default:
                 return;
         }
@@ -191,6 +194,7 @@ export default function Tickets() {
                                 <option value="Premium">Premium</option>
                                 <option value="Adult">Adult</option>
                                 <option value="Child">Child</option>
+                                <option value="Donate">Donate</option>
                             </select>
                             <button id="buyBtn" onClick={handleBuy}>Buy!</button>
                         </div>
