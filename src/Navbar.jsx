@@ -39,7 +39,10 @@ export default function Navbar() {
         }
     }, [location.pathname]);
 
+    const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
     const handleBarHover = (e) => {
+        if (isMobile()) return;
         const bar = e.currentTarget;
         // Logic from script.js barHover
         bar.style.width = "30%";
@@ -66,6 +69,7 @@ export default function Navbar() {
     };
 
     const handleBarOff = (e) => {
+        if (isMobile()) return;
         const bar = e.currentTarget;
         // Logic from script.js barOff
         bar.style.width = "";
@@ -92,6 +96,7 @@ export default function Navbar() {
     };
 
     const handleItemHover = (e) => {
+        if (isMobile()) return;
         const element = e.currentTarget;
         const img = element.querySelector(".image");
         const btn = element.querySelector(".btn");
@@ -106,6 +111,7 @@ export default function Navbar() {
     };
 
     const handleItemLeave = (e) => {
+        if (isMobile()) return;
         const element = e.currentTarget;
         const img = element.querySelector(".image");
         const btn = element.querySelector(".btn");

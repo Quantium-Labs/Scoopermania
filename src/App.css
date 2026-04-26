@@ -39,6 +39,13 @@
 
     #bar {
         min-width: 75vw !important;
+        top: auto !important;
+        bottom: 0% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    #scrollBtn {
+        bottom: 20% !important;
     }
 
     .btn {

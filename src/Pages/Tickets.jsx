@@ -10,6 +10,8 @@ export default function Tickets() {
     const [ticketType, setTicketType] = useState('Premium');
     const [isInfoOpen, setIsInfoOpen] = useState(false);
 
+    const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
     const handleBuy = () => {
         let url = '';
         switch (ticketType) {
@@ -78,8 +80,12 @@ export default function Tickets() {
 
         if (bar) {
             bar.style.transition = "0.5s ease-in-out";
-            bar.style.top = "-10%";
             bar.style.pointerEvents = "none";
+            if (isMobile()) {
+                bar.style.setProperty("bottom", "-30%", "important");
+            } else {
+                bar.style.top = "-10%";
+            }
         }
 
         screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
@@ -122,8 +128,12 @@ export default function Tickets() {
 
         if (bar) {
             bar.style.transition = "0.5s ease-in-out";
-            bar.style.top = "8%";
             bar.style.pointerEvents = "auto";
+            if (isMobile()) {
+                bar.style.setProperty("bottom", "0%", "important");
+            } else {
+                bar.style.top = "8%";
+            }
         }
 
         screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0)";

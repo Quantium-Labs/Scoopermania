@@ -46,6 +46,8 @@ function App() {
 
     const [isInfoOpen, setIsInfoOpen] = useState(false);
 
+    const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
     const mainBtnClick = () => {
         const centerElem = document.getElementById("center");
         const infoRight = document.querySelector(".infoRight");
@@ -101,8 +103,12 @@ function App() {
 
         if (bar) {
             bar.style.transition = "0.5s ease-in-out";
-            bar.style.top = "-10%";
             bar.style.pointerEvents = "none";
+            if (isMobile()) {
+                bar.style.setProperty("bottom", "-30%", "important");
+            } else {
+                bar.style.top = "-10%";
+            }
         }
 
         // --- Activate PERSISTENT dimmer ---
@@ -152,8 +158,12 @@ function App() {
 
         if (bar) {
             bar.style.transition = "0.5s ease-in-out";
-            bar.style.top = "8%";
             bar.style.pointerEvents = "auto";
+            if (isMobile()) {
+                bar.style.setProperty("bottom", "0%", "important");
+            } else {
+                bar.style.top = "8%";
+            }
         }
 
         screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0)";
