@@ -5,10 +5,28 @@
 ## Todos
 - [x] Convert to Vite+React
 - [x] Restore functionality
-- [ ] Rewrite logic
+- [x] Rewrite logic
 - [ ] New design
 - [ ] Proper Mobile Support
 ## What is Scoopermania?
 Scoopermania is an annual all-you-can-eat ice cream fundraiser for the Jimmy Fund and Dana-Farber Cancer Institute! This website project was started in 2025 to modernize how the event was marketed. Please check out the website and donate to Cancer Research if you can!
 ## How to self-host
-It's literally Vite, if you don't know what that is you shouldn't be here.
+1. Download the latest release from the releases tab.
+2. Unzip the file and navigate to the folder.
+3. Open terminal and go into the project directory.
+```
+cd /YOUR/PATH/TO/SCOOPERMANIA 
+```
+3. Install the dependencies.
+``` 
+npm install 
+```
+4. Build the project.
+``` 
+npm run build 
+```
+5. Start the server.
+```
+npm run preview 
+```
+6. Click on the link provided in the terminal to view the website.
