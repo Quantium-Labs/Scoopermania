@@ -1,20 +1,15 @@
-import {useState} from 'react'
-import Navbar from '../Navbar.jsx'
+import {useState, useEffect} from 'react'
 import '../App.css'
 
 export default function Supporters() {
+    useEffect(() => {
+        document.title = "Scoopermania Patrons";
+    }, []);
 
     return (
         <>
-            <head>
-                <title>Scoopermania Patrons</title>
-            </head>
-
-            <body>
-
             <div id="screen-dimmer"></div>
 
-            <Navbar/>
 
             <div id="patronCenter" className="glass">
                 <h1 id="patronTitle">Patrons</h1>
@@ -26,7 +21,6 @@ export default function Supporters() {
                     <p className="list">Cairn Johnson<br/>Lincoln Clark<br/>Al Davidson<br/>Judy Miller</p>
                 </div>
             </div>
-            </body>
-        </>
+            </>
     )
 }

@@ -1,8 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
-import Navbar from '../Navbar.jsx'
 import '../App.css'
 
 export default function Tickets() {
+    useEffect(() => {
+        document.title = "Scoopermania Tickets";
+    }, []);
+
     const closeTimeoutRef = useRef(null);
     const [ticketType, setTicketType] = useState('Premium');
     const [isInfoOpen, setIsInfoOpen] = useState(false);
@@ -161,14 +164,8 @@ export default function Tickets() {
 
     return (
         <>
-            <head>
-                <title>Scoopermania Tickets</title>
-            </head>
-
-            <body>
-
             <div id="screen-dimmer" onClick={exitInfo}></div>
-            <Navbar/>
+
 
             <div id="centerTickets" className="glass">
                 <div id="centerForm">
@@ -226,7 +223,6 @@ export default function Tickets() {
                     </div>
                 </div>
             </div>
-            </body>
         </>
     )
 }

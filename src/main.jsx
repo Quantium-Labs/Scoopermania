@@ -5,9 +5,11 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import App from './App.jsx'
 import Supporters from './Pages/Supporters.jsx'
 import Tickets from './Pages/Tickets.jsx'
+import Navbar from './Navbar.jsx'
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
+        <Navbar />
         <Routes>
             <Route path="/" element={<App />} />
             <Route path="/supporters" element={<Supporters />} />

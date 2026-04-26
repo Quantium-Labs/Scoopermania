@@ -1,6 +1,43 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
+import { useEffect } from "react";
 
 export default function Navbar() {
+    const location = useLocation();
+
+    useEffect(() => {
+        const bar = document.getElementById("bar");
+        if (bar) {
+            bar.style.width = "";
+            bar.style.height = "";
+            bar.style.borderRadius = "";
+            bar.style.backgroundColor = "";
+            bar.style.borderColor = "";
+            bar.style.backdropFilter = "";
+            bar.style.webkitBackdropFilter = "";
+            bar.style.boxShadow = "";
+        }
+
+        const allButtons = document.querySelectorAll(".btn");
+        allButtons.forEach((button) => {
+            button.style.fontSize = "";
+            button.style.opacity = "";
+            button.style.transform = "";
+        });
+
+        const allImages = document.querySelectorAll(".image");
+        allImages.forEach((img) => {
+            img.style.opacity = "";
+            img.style.transform = "";
+        });
+
+        // Dimmer logic
+        const screenDimmer = document.getElementById("screen-dimmer");
+        if (screenDimmer && screenDimmer.style.pointerEvents !== 'auto') {
+            screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0)";
+            screenDimmer.style.backdropFilter = "blur(0)";
+            screenDimmer.style.webkitBackdropFilter = "blur(0)";
+        }
+    }, [location.pathname]);
 
     const handleBarHover = (e) => {
         const bar = e.currentTarget;
@@ -86,21 +123,21 @@ export default function Navbar() {
         <div id="bar" onMouseEnter={handleBarHover} onMouseLeave={handleBarOff} className="glass">
             <div id="container">
                 <div id="home" className="overlap" onMouseEnter={handleItemHover} onMouseLeave={handleItemLeave}>
-                    <img src="./home.png" alt="Home" className="image" id="homeIcn" />
+                    <img src="/home.png" alt="Home" className="image" id="homeIcn" />
                     <button id="homeBtn" className="btn">
                         <Link to={"/"}>Home</Link>
                     </button>
                 </div>
 
                 <div id="iceCream" className="overlap" onMouseEnter={handleItemHover} onMouseLeave={handleItemLeave}>
-                    <img src="./ticket.png" alt="Ice Cream" className="image" id="iceCreamIcn" />
+                    <img src="/ticket.png" alt="Ice Cream" className="image" id="iceCreamIcn" />
                     <button id="iceCreamBtn" className="btn">
                         <Link to="/tickets">Tickets</Link>
                     </button>
                 </div>
 
                 <div id="about" className="overlap" onMouseEnter={handleItemHover} onMouseLeave={handleItemLeave}>
-                    <img src="./heart.png" alt="supporters" className="image" id="donateIcn" />
+                    <img src="/heart.png" alt="supporters" className="image" id="donateIcn" />
                     <button id="aboutBtn" className="btn">
                         <Link to="/supporters">Patrons</Link>
                     </button>
@@ -109,4 +146,3 @@ export default function Navbar() {
         </div>
     );
 }
-

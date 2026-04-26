@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import Navbar from "./Navbar.jsx";
 import "./App.css"; // Ensure styles are loaded
 
 function App() {
@@ -62,6 +61,7 @@ function App() {
         }
 
         // --- Animate elements ---
+        centerElem.style.transition = "0.7s ease-in-out";
         centerElem.style.scale = "0.5";
         centerElem.style.left = "1vw";
         centerElem.style.bottom = "1vw";
@@ -70,14 +70,17 @@ function App() {
 
         const labels = document.querySelectorAll(".label");
         labels.forEach((label) => {
+            label.style.transition = "0.7s ease-in-out";
             label.style.color = "#E5E5E5";
         });
         const numbers = document.querySelectorAll(".number");
         numbers.forEach((number) => {
+            number.style.transition = "0.7s ease-in-out";
             number.style.color = "#E5E5E5";
         });
         const colons = document.querySelectorAll(".colon");
         colons.forEach((colon) => {
+            colon.style.transition = "0.7s ease-in-out";
             colon.style.color = "#E5E5E5";
         });
 
@@ -97,6 +100,7 @@ function App() {
         });
 
         if (bar) {
+            bar.style.transition = "0.5s ease-in-out";
             bar.style.top = "-10%";
             bar.style.pointerEvents = "none";
         }
@@ -118,23 +122,24 @@ function App() {
         if (!centerElem || !screenDimmer || !infoRight) return;
 
         // --- Animate elements back ---
-        centerElem.style.scale = "";
-        centerElem.style.left = "";
-        centerElem.style.bottom = "";
-        centerElem.style.backgroundColor = "";
-        centerElem.style.borderColor = "";
+        centerElem.style.transition = "0.7s ease-in-out";
+        centerElem.style.scale = "1";
+        centerElem.style.left = "50%";
+        centerElem.style.bottom = "50%";
+        centerElem.style.backgroundColor = "rgba(229, 229, 229, 0.3)";
+        centerElem.style.borderColor = "#E5E5E5";
 
         const labels = document.querySelectorAll(".label");
         labels.forEach((label) => {
-            label.style.color = "";
+            label.style.color = "white";
         });
         const numbers = document.querySelectorAll(".number");
         numbers.forEach((number) => {
-            number.style.color = "";
+            number.style.color = "white";
         });
         const colons = document.querySelectorAll(".colon");
         colons.forEach((colon) => {
-            colon.style.color = "";
+            colon.style.color = "white";
         });
 
         infoRight.style.left = "200%";
@@ -146,11 +151,12 @@ function App() {
         }, 700);
 
         if (bar) {
-            bar.style.top = "";
-            bar.style.pointerEvents = "";
+            bar.style.transition = "0.5s ease-in-out";
+            bar.style.top = "8%";
+            bar.style.pointerEvents = "auto";
         }
 
-        screenDimmer.style.backgroundColor = "";
+        screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0)";
         screenDimmer.style.backdropFilter = "";
         screenDimmer.style.webkitBackdropFilter = "";
         screenDimmer.style.pointerEvents = "";
@@ -203,7 +209,6 @@ function App() {
         <>
             <div id="screen-dimmer" onClick={exitInfo}></div>
 
-            <Navbar />
 
             <div id="center" className="glass">
                 <div id="countdown-container">
@@ -266,3 +271,4 @@ function App() {
 }
 
 export default App;
+
