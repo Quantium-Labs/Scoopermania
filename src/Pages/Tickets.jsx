@@ -221,19 +221,19 @@ export default function Tickets() {
                 <div>
                     <div>
                         <h3 className="larger">Premium</h3>
-                        <p className="info">For only $2 more dollars than the Adult ticket enjoy all-you-can-eat ice
+                        <p className="info">For a choosing of your donation plus an Adult ticket, you can enjoy all-you-can-eat ice
                             cream, get into the raffle, support the cause, and cement your name into the Patrons page of
                             the Scoopermania website!</p>
                     </div>
                     <div>
                         <h3 className="larger">Adult</h3>
                         <p className="info">For those 13 and older, get all-you-can-eat ice cream for only $8 dollars at
-                            Scoopermania on May 17!</p>
+                            Scoopermania on May 9!</p>
                     </div>
                     <div>
                         <h3 className="larger">Child</h3>
                         <p className="info">For those 12 and younger, get all-you-can-eat ice cream for only $5 dollars
-                            at Scoopermania on May 17!</p>
+                            at Scoopermania on May 9!</p>
                     </div>
                 </div>
             </div>

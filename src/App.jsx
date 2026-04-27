@@ -270,7 +270,7 @@ function App() {
                 <p className="info">Scoopermania is an annual all-you-can-eat ice cream fundraiser for the Jimmy Fund and Dana-Farber Cancer Institute!</p>
                 <h3 className="larger">When is it?</h3>
                 <p className="info">
-                    Scoopermania will be held on Saturday, May 17, 2025, from 11:00 AM to 4:00 PM at the{" "}
+                    Scoopermania will be held on Saturday, May 9, 2026, from 11:00 AM to 4:00 PM at the{" "}
                     <a id="map" href="https://maps.apple.com/directions?destination=42.415726%2C+-71.15239&mode=driving">
                         Cyrus Dallin Art Museum.
                     </a>
