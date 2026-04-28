@@ -24,6 +24,9 @@ export default function Tickets() {
             case 'Child':
                 url = 'https://ko-fi.com/s/08b43c691b';
                 break;
+            case 'Support':
+                url = 'https://ko-fi.com/scoopermania';
+                break;
             default:
                 return;
         }
@@ -216,20 +219,19 @@ export default function Tickets() {
                 <h2 id="infoTitle">What's the difference?</h2>
                 <div>
                     <div>
-                        <h3 className="larger">Premium</h3>
-                        <p className="info">For only $2 more dollars than the Adult ticket enjoy all-you-can-eat ice
-                            cream, get into the raffle, support the cause, and cement your name into the Patrons page of
-                            the Scoopermania website!</p>
+                        <h3 className="larger">Child</h3>
+                        <p className="info">For those 12 and younger, get all-you-can-eat ice cream for only <b>$5</b> at Scoopermania!</p>
                     </div>
                     <div>
                         <h3 className="larger">Adult</h3>
-                        <p className="info">For those 13 and older, get all-you-can-eat ice cream for only $8 dollars at
-                            Scoopermania on May 17!</p>
+                        <p className="info">For those 13 and older, get all-you-can-eat ice cream for only <b>$8</b> at
+                            Scoopermania!</p>
                     </div>
                     <div>
-                        <h3 className="larger">Child</h3>
-                        <p className="info">For those 12 and younger, get all-you-can-eat ice cream for only $5 dollars
-                            at Scoopermania on May 17!</p>
+                        <h3 className="larger">Premium</h3>
+                        <p className="info">For only <b>$2</b> more than the Adult ticket enjoy all-you-can-eat ice
+                            cream, enter into the raffle, support the cause, and cement your name into the Patrons page of
+                            the Scoopermania website!</p>
                     </div>
                 </div>
             </div>
