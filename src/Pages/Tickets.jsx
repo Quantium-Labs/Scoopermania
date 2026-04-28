@@ -194,6 +194,7 @@ export default function Tickets() {
                                 <option value="Premium">Premium</option>
                                 <option value="Adult">Adult</option>
                                 <option value="Child">Child</option>
+                                <option value="Support">Support</option>
                             </select>
                             <button id="buyBtn" onClick={handleBuy}>Buy!</button>
                         </div>
