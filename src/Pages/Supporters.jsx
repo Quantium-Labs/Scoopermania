@@ -14,11 +14,11 @@ export default function Supporters() {
             <div id="patronCenter" className="glass">
                 <h1 id="patronTitle">Patrons</h1>
                 <div id="patronLists">
-                    <p className="list">Matt Malupin<br/>Caleb Lefebvre<br/>Camden Clark<br/>Patricia Fries<br/>Linda
-                        Manganaro
-                    </p>
-                    <p className="list">Ms. Q<br/>Hailey Stern<br/>Amitai Zur<br/>Jannine Williams<br/>Donald Rivkin</p>
-                    <p className="list">Cairn Johnson<br/>Lincoln Clark<br/>Al Davidson<br/>Judy Miller</p>
+                    {/*<p className="list">Matt Malupin<br/>Caleb Lefebvre<br/>Camden Clark<br/>Patricia Fries<br/>Linda*/}
+                    {/*    Manganaro*/}
+                    {/*</p>*/}
+                    {/*<p className="list">Ms. Q<br/>Hailey Stern<br/>Amitai Zur<br/>Jannine Williams<br/>Donald Rivkin</p>*/}
+                    {/*<p className="list">Cairn Johnson<br/>Lincoln Clark<br/>Al Davidson<br/>Judy Miller</p>*/}
                 </div>
             </div>
             </>
