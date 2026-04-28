@@ -90,16 +90,7 @@
     }
 
     .credits {
-        background-color: rgba(229, 229, 229, 0.3);
-        border-radius: 2.2em;
-        position: absolute;
-        right: 2%;
-        top: 2%;
-        width: 400px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        visibility: hidden !important;
     }
 }
 
