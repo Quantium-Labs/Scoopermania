@@ -230,7 +230,7 @@ export default function Tickets() {
                     </div>
                     <div>
                         <h3 className="larger">Premium</h3>
-                        <p className="info">For a choosing of your donation plus the price of an Adult ticket, enjoy all-you-can-eat ice
+                        <p className="info">For a minimum of only <b>$2</b> more than an adult ticket, enjoy all-you-can-eat ice
                             cream, enter into the raffle, support the cause, and cement your name into the Patrons page of
                             the Scoopermania website!</p>
                     </div>
