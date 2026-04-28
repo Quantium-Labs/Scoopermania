@@ -24,8 +24,8 @@ export default function Tickets() {
             case 'Child':
                 url = 'https://ko-fi.com/s/08b43c691b';
                 break;
-            case 'Donate':
-                url = 'https://ko-fi.com/scoopermania'
+            case 'Support':
+                url = 'https://ko-fi.com/scoopermania';
                 break;
             default:
                 return;
@@ -194,7 +194,7 @@ export default function Tickets() {
                                 {/*<option value="Premium">Premium</option>*/}
                                 <option value="Adult">Adult</option>
                                 <option value="Child">Child</option>
-                                <option value="Donate">Donate</option>
+                                <option value="Support">Support</option>
                             </select>
                             <button id="buyBtn" onClick={handleBuy}>Buy!</button>
                         </div>
@@ -220,22 +220,24 @@ export default function Tickets() {
                 <h2 id="infoTitle">What's the difference?</h2>
                 <div>
                     <div>
-                        <h3 className="larger">Premium</h3>
-                        <p className="info">For a choosing of your donation plus an Adult ticket, you can enjoy all-you-can-eat ice
-                            cream, get into the raffle, support the cause, and cement your name into the Patrons page of
-                            the Scoopermania website!</p>
+                        <h3 className="larger">Child</h3>
+                        <p className="info">For those 12 and younger, get all-you-can-eat ice cream for only <b>$5</b> at Scoopermania!</p>
                     </div>
                     <div>
                         <h3 className="larger">Adult</h3>
-                        <p className="info">For those 13 and older, get all-you-can-eat ice cream for only $8 dollars at
-                            Scoopermania on May 9!</p>
+                        <p className="info">For those 13 and older, get all-you-can-eat ice cream for only <b>$8</b> at
+                            Scoopermania!</p>
                     </div>
                     <div>
-                        <h3 className="larger">Child</h3>
-                        <p className="info">For those 12 and younger, get all-you-can-eat ice cream for only $5 dollars
-                            at Scoopermania on May 9!</p>
+                        <h3 className="larger">Premium</h3>
+                        <p className="info">For a minimum of only <b>$2</b> more than an adult ticket, enjoy all-you-can-eat ice
+                            cream, enter into the raffle, support the cause, and cement your name into the Patrons page of
+                            the Scoopermania website!</p>
                     </div>
                 </div>
+            </div>
+            <div className="credits glass">
+                <p className="creditsText">Website built by <b>Alex Rivkin</b> and <b>Eythan Lawless</b></p>
             </div>
         </>
     )
