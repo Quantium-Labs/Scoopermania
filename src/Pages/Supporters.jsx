@@ -21,6 +21,9 @@ export default function Supporters() {
                     {/*<p className="list">Cairn Johnson<br/>Lincoln Clark<br/>Al Davidson<br/>Judy Miller</p>*/}
                 </div>
             </div>
+            <div className="credits glass">
+                <p className="creditsText">Website built by <b>Alex Rivkin</b> and <b>Eythan Lawless</b></p>
+            </div>
             </>
     )
 }

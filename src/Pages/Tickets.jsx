@@ -236,6 +236,9 @@ export default function Tickets() {
                     </div>
                 </div>
             </div>
+            <div className="credits glass">
+                <p className="creditsText">Website built by <b>Alex Rivkin</b> and <b>Eythan Lawless</b></p>
+            </div>
         </>
     )
 }
