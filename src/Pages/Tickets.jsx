@@ -191,7 +191,7 @@ export default function Tickets() {
                                 value={ticketType}
                                 onChange={(e) => setTicketType(e.target.value)}
                             >
-                                <option value="Premium">Premium</option>
+                                {/*<option value="Premium">Premium</option>*/}
                                 <option value="Adult">Adult</option>
                                 <option value="Child">Child</option>
                                 <option value="Donate">Donate</option>
