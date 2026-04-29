@@ -63,7 +63,7 @@ function App() {
         }
 
         // --- Animate elements ---
-        centerElem.style.transition = "0.7s ease-in-out";
+        centerElem.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
         centerElem.style.scale = "0.5";
         centerElem.style.left = "1vw";
         centerElem.style.bottom = "1vw";
@@ -72,17 +72,17 @@ function App() {
 
         const labels = document.querySelectorAll(".label");
         labels.forEach((label) => {
-            label.style.transition = "0.7s ease-in-out";
+            label.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
             label.style.color = "#E5E5E5";
         });
         const numbers = document.querySelectorAll(".number");
         numbers.forEach((number) => {
-            number.style.transition = "0.7s ease-in-out";
+            number.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
             number.style.color = "#E5E5E5";
         });
         const colons = document.querySelectorAll(".colon");
         colons.forEach((colon) => {
-            colon.style.transition = "0.7s ease-in-out";
+            colon.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
             colon.style.color = "#E5E5E5";
         });
 
@@ -97,12 +97,12 @@ function App() {
         infoRight.style.display = "block";
 
         requestAnimationFrame(() => {
-            infoRight.style.transition = "0.7s ease-in-out";
+            infoRight.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
             infoRight.style.left = "50%";
         });
 
         if (bar) {
-            bar.style.transition = "0.5s ease-in-out";
+            bar.style.transition = "0.5s cubic-bezier(0.4, 0, 0.2, 1)";
             bar.style.pointerEvents = "none";
             if (isMobile()) {
                 bar.style.setProperty("bottom", "-30%", "important");
@@ -128,7 +128,7 @@ function App() {
         if (!centerElem || !screenDimmer || !infoRight) return;
 
         // --- Animate elements back ---
-        centerElem.style.transition = "0.7s ease-in-out";
+        centerElem.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
         centerElem.style.scale = "1";
         centerElem.style.left = "50%";
         centerElem.style.bottom = "50%";
@@ -157,7 +157,7 @@ function App() {
         }, 700);
 
         if (bar) {
-            bar.style.transition = "0.5s ease-in-out";
+            bar.style.transition = "0.5s cubic-bezier(0.4, 0, 0.2, 1)";
             bar.style.pointerEvents = "auto";
             if (isMobile()) {
                 bar.style.setProperty("bottom", "0%", "important");

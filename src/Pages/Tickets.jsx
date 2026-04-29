@@ -48,7 +48,7 @@ export default function Tickets() {
         }
 
         // --- Animate elements ---
-        centerElem.style.transition = "0.7s ease-in-out";
+        centerElem.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
         centerElem.style.opacity = 0;
         centerElem.style.pointerEvents = "none";
         centerElem.style.left = "50%";
@@ -62,7 +62,7 @@ export default function Tickets() {
         // Script.js seemed generic. I'll include the color transitions just in case.
         const labels = document.querySelectorAll(".label");
         labels.forEach((label) => {
-            label.style.transition = "0.7s ease-in-out";
+            label.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
             label.style.color = "#E5E5E5";
         });
 
@@ -77,12 +77,12 @@ export default function Tickets() {
         infoRight.style.display = "block";
 
         requestAnimationFrame(() => {
-            infoRight.style.transition = "0.7s ease-in-out";
+            infoRight.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
             infoRight.style.left = "50%";
         });
 
         if (bar) {
-            bar.style.transition = "0.5s ease-in-out";
+            bar.style.transition = "0.5s cubic-bezier(0.4, 0, 0.2, 1)";
             bar.style.pointerEvents = "none";
             if (isMobile()) {
                 bar.style.setProperty("bottom", "-30%", "important");
@@ -106,7 +106,7 @@ export default function Tickets() {
 
         if (!centerElem || !screenDimmer || !infoRight) return;
 
-        centerElem.style.transition = "0.7s ease-in-out";
+        centerElem.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
         centerElem.style.opacity = 1;
         centerElem.style.pointerEvents = "auto";
         centerElem.style.scale = 1;
@@ -120,7 +120,7 @@ export default function Tickets() {
             label.style.color = "white"; // Or default color
         });
 
-        infoRight.style.transition = "0.7s ease-in-out";
+        infoRight.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
         infoRight.style.left = "200%";
         infoRight.style.zIndex = 0;
         
@@ -130,7 +130,7 @@ export default function Tickets() {
         }, 700);
 
         if (bar) {
-            bar.style.transition = "0.5s ease-in-out";
+            bar.style.transition = "0.5s cubic-bezier(0.4, 0, 0.2, 1)";
             bar.style.pointerEvents = "auto";
             if (isMobile()) {
                 bar.style.setProperty("bottom", "0%", "important");

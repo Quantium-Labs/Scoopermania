@@ -107,9 +107,9 @@
     z-index: 5;
     pointer-events: none;
     transition:
-        background-color 0.7s ease-in-out,
-        backdrop-filter 0.7s ease-in-out,
-        -webkit-backdrop-filter 0.7s ease-in-out;
+        background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        -webkit-backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html,
@@ -165,14 +165,14 @@ body {
     box-sizing: border-box;
     z-index: 10;
     transition:
-        width 0.7s ease-in-out,
-        height 0.7s ease-in-out,
-        border-radius 0.7s ease-in-out,
-        background-color 0.7s ease-in-out,
-        border-color 0.7s ease-in-out,
-        backdrop-filter 0.7s ease-in-out,
-        -webkit-backdrop-filter 0.7s ease-in-out,
-        box-shadow 0.7s ease-in-out;
+        width 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        height 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        -webkit-backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #countdown-container {
@@ -338,13 +338,13 @@ body {
     padding: 1em 2em;
     animation:
         gradientShift 10s linear infinite,
-        glowPulse 1.5s ease-in-out infinite;
+        glowPulse 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     font-size: 1.2em;
     text-wrap: nowrap;
     border-radius: 1.2em;
     color: white;
     font-weight: 800;
-    transition: 0.2s ease-in-out;
+    transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     background-clip: padding-box;
     -webkit-backface-visibility: hidden;
@@ -525,7 +525,7 @@ a {
     height: 3.5em;
     animation: gradientShift 10s linear infinite;
     border-radius: 3.5em;
-    transition: 0.2s ease-in-out;
+    transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     background-clip: padding-box;
     -webkit-backface-visibility: hidden;

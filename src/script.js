@@ -159,7 +159,7 @@ export function mainBtnClick() {
         centerTickets.style.display = "none";
     }
     // --- Animate elements ---
-    centerElem.style.transition = "0.7s ease-in-out";
+    centerElem.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
     centerElem.style.scale = 0.5;
     centerElem.style.left = "1vw";
     centerElem.style.bottom = "1vw";
@@ -168,17 +168,17 @@ export function mainBtnClick() {
 
     const labels = document.querySelectorAll(".label");
     labels.forEach((label) => {
-        label.style.transition = "0.7s ease-in-out";
+        label.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
         label.style.color = "#E5E5E5";
     });
     const numbers = document.querySelectorAll(".number");
     numbers.forEach((number) => {
-        number.style.transition = "0.7s ease-in-out";
+        number.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
         number.style.color = "#E5E5E5";
     });
     const colons = document.querySelectorAll(".colon");
     colons.forEach((colon) => {
-        colon.style.transition = "0.7s ease-in-out";
+        colon.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
         colon.style.color = "#E5E5E5";
     });
 
@@ -187,13 +187,13 @@ export function mainBtnClick() {
         mainBtn.style.pointerEvents = "none";
     }
 
-    infoRight.style.transition = "0.7s ease-in-out";
+    infoRight.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
     infoRight.style.left = "50%";
     infoRight.style.zIndex = 10;
     infoRight.style.display = "block";
 
     if (typeof bar !== 'undefined' && bar) {
-        bar.style.transition = "0.5s ease-in-out";
+        bar.style.transition = "0.5s cubic-bezier(0.4, 0, 0.2, 1)";
         bar.style.top = "-10%";
         bar.style.pointerEvents = "none";
     }
@@ -214,7 +214,7 @@ export function exitInfo() {
         centerTickets.style.display = "flex";
     }
     // --- Animate elements back ---
-    centerElem.style.transition = "0.7s ease-in-out";
+    centerElem.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
     centerElem.style.scale = 1;
     centerElem.style.left = "50%";
     centerElem.style.bottom = "50%";
@@ -234,13 +234,13 @@ export function exitInfo() {
         colon.style.color = "white";
     });
 
-    infoRight.style.transition = "0.7s ease-in-out";
+    infoRight.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
     infoRight.style.left = "200%";
     infoRight.style.zIndex = 0;
     infoRight.style.display = "none";
 
     if (typeof bar !== 'undefined' && bar) {
-        bar.style.transition = "0.5s ease-in-out";
+        bar.style.transition = "0.5s cubic-bezier(0.4, 0, 0.2, 1)";
         bar.style.top = "8%";
         bar.style.pointerEvents = "auto";
     }
