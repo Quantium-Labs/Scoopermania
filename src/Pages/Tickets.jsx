@@ -196,7 +196,7 @@ export default function Tickets() {
                                 <option value="Child">Child</option>
                                 <option value="Support">Support</option>
                             </select>
-                            <button id="buyBtn" onClick={handleBuy}>Buy!</button>
+                            <button id="buyBtn" onClick={handleBuy}><img src="/rightArrow.svg" id="buyArrow" /></button>
                         </div>
                     </div>
                 </div>

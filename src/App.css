@@ -530,20 +530,29 @@ a {
     border: 1px solid rgb(183, 183, 183);
     backdrop-filter: blur(1.5vw);
     -webkit-backdrop-filter: blur(1.5vw);
-    padding: 1vw 2em;
+    width: 3.5em;
+    height: 3.5em;
     animation: gradientShift 10s linear infinite;
-    font-size: 1.2em;
-    text-wrap: nowrap;
-    border-radius: 1.2em;
-    color: white;
-    font-weight: 800;
+    border-radius: 3.5em;
     transition: 0.2s ease-in-out;
     cursor: pointer;
     background-clip: padding-box;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
-    height: 100%;
     text-align: center;
+}
+
+#buyArrow {
+    position: absolute;
+    width: 2em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: invert(1);
+}
+
+#buyBtn:hover {
+    scale: 1.1;
 }
 
 #centerForm {
@@ -568,7 +577,7 @@ a {
 #ticketType {
     margin-right: 1vw;
     font-size: 1.2vw;
-    background: white url("/arrow.png") no-repeat right 1em center/1em auto;
+    background: white url("public/arrow.svg") no-repeat right 1em center/1em auto;
     color: black;
     border: 1px solid #ccc;
     border-radius: 1em;
@@ -578,6 +587,7 @@ a {
     -moz-appearance: none;
     box-shadow: none;
     cursor: pointer;
+    outline: none;
 }
 
 #ticketInfoRight {

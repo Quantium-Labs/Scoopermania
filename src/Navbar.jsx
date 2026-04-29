@@ -145,7 +145,7 @@ export default function Navbar() {
                 <div id="about" className="overlap" onMouseEnter={handleItemHover} onMouseLeave={handleItemLeave}>
                     <img src="/heart.png" alt="supporters" className="image" id="supportIcn" />
                     <button id="aboutBtn" className="btn">
-                        <Link to="/supporters">Support</Link>
+                        <Link to="/supporters">Patrons</Link>
                     </button>
                 </div>
             </div>
