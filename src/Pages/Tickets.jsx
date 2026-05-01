@@ -7,7 +7,7 @@ export default function Tickets() {
     }, []);
 
     const closeTimeoutRef = useRef(null);
-    const [ticketType, setTicketType] = useState('Premium');
+    const [ticketType, setTicketType] = useState('Adult');
     const [isInfoOpen, setIsInfoOpen] = useState(false);
 
     const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
