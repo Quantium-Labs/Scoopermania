@@ -228,12 +228,6 @@ export default function Tickets() {
                         <p className="info">For those 13 and older, get all-you-can-eat ice cream for only <b>$8</b> at
                             Scoopermania!</p>
                     </div>
-                    <div>
-                        <h3 className="larger">Premium</h3>
-                        <p className="info">For a minimum of only <b>$2</b> more than an adult ticket, enjoy all-you-can-eat ice
-                            cream, enter into the raffle, support the cause, and cement your name into the Patrons page of
-                            the Scoopermania website!</p>
-                    </div>
                 </div>
             </div>
             <div className="credits glass">
