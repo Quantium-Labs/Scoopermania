@@ -1,238 +1,42 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import '../App.css'
+import {Link} from 'react-router'
+
+const tickets = [
+        { name: 'Child', price: 5, detail: 'Ages 12 and under', url: '/payment' },
+    { name: 'Adult', price: 8, detail: 'Ages 13 and up', url: '/payment' },
+    { name: 'Premium', price: 10, detail: 'Premium admission', url: '/payment' },
+]
 
 export default function Tickets() {
     useEffect(() => {
-        document.title = "Scoopermania Tickets";
-    }, []);
-
-    const closeTimeoutRef = useRef(null);
-    const [ticketType, setTicketType] = useState('Adult');
-    const [isInfoOpen, setIsInfoOpen] = useState(false);
-
-    const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
-
-    const handleBuy = () => {
-        let url = '';
-        switch (ticketType) {
-            case 'Premium':
-                url = 'https://ko-fi.com/s/9419ab8349';
-                break;
-            case 'Adult':
-                url = 'https://ko-fi.com/s/152b08e74c';
-                break;
-            case 'Child':
-                url = 'https://ko-fi.com/s/08b43c691b';
-                break;
-            case 'Support':
-                url = 'https://ko-fi.com/scoopermania';
-                break;
-            default:
-                return;
-        }
-        window.open(url, '_blank');
-    };
-
-    const mainBtnClick = () => {
-        const centerElem = document.getElementById("centerTickets"); // Changed to match Tickets page ID
-        const infoRight = document.querySelector(".infoRight");
-        const screenDimmer = document.getElementById("screen-dimmer");
-        const mainBtn = document.getElementById("scroll");
-        const bar = document.getElementById("bar");
-
-        if (!centerElem || !screenDimmer || !infoRight) return;
-
-        if (closeTimeoutRef.current) {
-            clearTimeout(closeTimeoutRef.current);
-            closeTimeoutRef.current = null;
-        }
-
-        // --- Animate elements ---
-        centerElem.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
-        centerElem.style.opacity = 0;
-        centerElem.style.pointerEvents = "none";
-        centerElem.style.left = "50%";
-        centerElem.style.bottom = "50%";
-        centerElem.style.backgroundColor = "rgba(130, 130, 130, 0.5)";
-        centerElem.style.borderColor = "rgb(170, 170, 170)";
-        
-        // Colors logic... (labels, numbers, colons not present in Tickets page center?)
-        // Tickets page center has labels and inputs. Script.js targetted ".label", ".number", ".colon".
-        // Let's check Tickets.jsx content. It has "buyLabel".
-        // Script.js seemed generic. I'll include the color transitions just in case.
-        const labels = document.querySelectorAll(".label");
-        labels.forEach((label) => {
-            label.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
-            label.style.color = "#E5E5E5";
-        });
-
-        if (mainBtn) {
-            mainBtn.style.opacity = 0;
-            mainBtn.style.pointerEvents = "none";
-        }
-
-        infoRight.style.transition = "none";
-        infoRight.style.left = "200%";
-        infoRight.style.zIndex = 10;
-        infoRight.style.display = "block";
-
-        requestAnimationFrame(() => {
-            infoRight.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
-            infoRight.style.left = "50%";
-        });
-
-        if (bar) {
-            bar.style.transition = "0.5s cubic-bezier(0.4, 0, 0.2, 1)";
-            bar.style.pointerEvents = "none";
-            if (isMobile()) {
-                bar.style.setProperty("bottom", "-30%", "important");
-            } else {
-                bar.style.top = "-10%";
-            }
-        }
-
-        screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-        screenDimmer.style.pointerEvents = "auto";
-        setIsInfoOpen(true);
-    };
-
-    const exitInfo = () => {
-        if (!isInfoOpen) return;
-        const centerElem = document.getElementById("centerTickets");
-        const infoRight = document.querySelector(".infoRight");
-        const screenDimmer = document.getElementById("screen-dimmer");
-        const mainBtn = document.getElementById("scroll");
-        const bar = document.getElementById("bar");
-
-        if (!centerElem || !screenDimmer || !infoRight) return;
-
-        centerElem.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
-        centerElem.style.opacity = 1;
-        centerElem.style.pointerEvents = "auto";
-        centerElem.style.scale = 1;
-        centerElem.style.left = "50%";
-        centerElem.style.bottom = "50%";
-        centerElem.style.backgroundColor = "rgba(229, 229, 229, 0.3)";
-        centerElem.style.borderColor = "#E5E5E5";
-
-         const labels = document.querySelectorAll(".label");
-        labels.forEach((label) => {
-            label.style.color = "white"; // Or default color
-        });
-
-        infoRight.style.transition = "0.7s cubic-bezier(0.4, 0, 0.2, 1)";
-        infoRight.style.left = "200%";
-        infoRight.style.zIndex = 0;
-        
-        closeTimeoutRef.current = setTimeout(() => {
-             infoRight.style.display = "none";
-             closeTimeoutRef.current = null;
-        }, 700);
-
-        if (bar) {
-            bar.style.transition = "0.5s cubic-bezier(0.4, 0, 0.2, 1)";
-            bar.style.pointerEvents = "auto";
-            if (isMobile()) {
-                bar.style.setProperty("bottom", "0%", "important");
-            } else {
-                bar.style.top = "8%";
-            }
-        }
-
-        screenDimmer.style.backgroundColor = "rgba(0, 0, 0, 0)";
-        screenDimmer.style.backdropFilter = "blur(0)";
-        screenDimmer.style.webkitBackdropFilter = "blur(0)";
-        screenDimmer.style.pointerEvents = "none";
-
-        document.body.style.cursor = "default";
-
-        setTimeout(() => {
-            if (mainBtn) {
-                mainBtn.style.opacity = 1;
-                mainBtn.style.pointerEvents = "auto";
-            }
-        }, 500);
-        setIsInfoOpen(false);
-    };
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-             const infoRight = document.querySelector(".infoRight");
-             if (isInfoOpen && infoRight && !infoRight.contains(event.target)) {
-                 const mainBtn = document.getElementById("scroll");
-                 if (!mainBtn || !mainBtn.contains(event.target)) {
-                     exitInfo();
-                 }
-             }
-        };
-
-        if (isInfoOpen) {
-            document.addEventListener("click", handleClickOutside);
-        }
-        return () => {
-             document.removeEventListener("click", handleClickOutside);
-        };
-    }, [isInfoOpen]);
-
+        document.title = 'Scoopermania Tickets'
+    }, [])
 
     return (
-        <>
-            <div id="screen-dimmer" onClick={exitInfo}></div>
+        <main className="tickets-page">
+            <div className="tickets-content">
+                <header className="tickets-heading">
+                    <h1>Choose your ticket</h1>
+                    <p>All-you-can-eat ice cream at Scoopermania</p>
+                </header>
 
-
-            <div id="centerTickets" className="glass">
-                <div id="centerForm">
-                    <div id="form">
-                        <label htmlFor="ticketType" id="buyLabel">Buy a Ticket!</label>
-                        <div id="enter">
-                            <select 
-                                name="ticketType" 
-                                id="ticketType" 
-                                value={ticketType}
-                                onChange={(e) => setTicketType(e.target.value)}
-                            >
-                                {/*<option value="Premium">Premium</option>*/}
-                                <option value="Adult">Adult</option>
-                                <option value="Child">Child</option>
-                                <option value="Support">Support</option>
-                            </select>
-                            <button id="buyBtn" onClick={handleBuy}><img src="/rightArrow.svg" id="buyArrow" /></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="scrollBtn">
-                <button 
-                    className="mainBtn no-glow" 
-                    id="scroll" 
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        mainBtnClick();
-                    }}
-                >
-                    What's the difference?
-                </button>
-            </div>
-
-            <div className="infoRight glass" id="ticketInfoRight">
-                <p id="exit" onClick={exitInfo}>X</p>
-                <h2 id="infoTitle">What's the difference?</h2>
-                <div>
-                    <div>
-                        <h3 className="larger">Child</h3>
-                        <p className="info">For those 12 and younger, get all-you-can-eat ice cream for only <b>$5</b> at Scoopermania!</p>
-                    </div>
-                    <div>
-                        <h3 className="larger">Adult</h3>
-                        <p className="info">For those 13 and older, get all-you-can-eat ice cream for only <b>$8</b> at
-                            Scoopermania!</p>
-                    </div>
+                <div className="ticket-grid">
+                    {tickets.map(({ name, price, detail, url }) => (
+                        <article className="ticket-card glass" key={name}>
+                            <h2>{name}</h2>
+                            <p className="ticket-price"><span>$</span>{price}</p>
+                            <p className="ticket-detail">{detail}</p>
+                            <Link className="ticket-buy" to={url} rel="noopener noreferrer" aria-label={`Buy ${name.toLowerCase()} ticket for $${price}`}>
+                                Buy ticket
+                            </Link>
+                        </article>
+                    ))}
                 </div>
             </div>
             <div className="credits glass">
                 <p className="creditsText">Website built by <b>Alex Rivkin</b> and <b>Eythan Lawless</b></p>
             </div>
-        </>
+        </main>
     )
 }
